@@ -123,6 +123,5 @@ pnpm run dev:examples
 ```
 
 <p align="middle">
-  <img src="vanilla-example.png" width="400" height="auto" alt="Vanilla Example with `@azns/resolver-core`" />
-  <img src="next-example.png" width="400" height="auto" alt="React & Next.js Example with `@azns/resolver-react`" />
+  <img src="vanilla-example.png" width="600" height="auto" alt="Vanilla Example with `@azns/resolver-core`" />
 </p>
