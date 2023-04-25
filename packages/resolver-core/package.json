@@ -1,7 +1,7 @@
 {
   "name": "@azns/resolver-core",
   "author": "AZERO Domains <hello@azero.domains> (https://azero.domains)",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vanilla JS/TS Library for resolving AZERO Domains",
   "homepage": "https://azero.domains",
   "type": "module",
