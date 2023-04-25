@@ -1,14 +1,14 @@
 {
-  "name": "@azns/resolver-core",
+  "name": "@azns/resolver-react",
   "author": "AZERO Domains <hello@azero.domains> (https://azero.domains)",
   "version": "0.0.1",
-  "description": "Vanilla JS/TS Library for resolving AZERO Domains",
+  "description": "React Hooks Library for resolving AZERO Domains",
   "homepage": "https://azero.domains",
   "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/azero-domains/resolver.git",
-    "directory": "packages/resolver-core"
+    "directory": "packages/resolver-react"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,19 +37,21 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@polkadot/api": ">=10",
-    "@polkadot/api-contract": ">=10",
-    "@polkadot/types": ">=10",
-    "@polkadot/util": ">=11.1.3",
-    "bufferutil": ">=4",
-    "utf-8-validate": ">=6",
-    "loglevel": ">=1.8"
+    "@azns/resolver-core": "workspace:*",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.38"
   },
   "keywords": [
     "azero",
     "domains",
     "resolver",
-    "vanilla",
+    "react",
+    "hooks",
+    "next",
+    "nextjs",
     "js",
     "ts",
     "library",
