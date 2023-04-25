@@ -9,11 +9,22 @@
       "path": "../packages/resolver-core"
     },
     {
+      "name": "packages/resolver-react",
+      "path": "../packages/resolver-react"
+    },
+    {
       "name": "examples/vanilla",
       "path": "../examples/vanilla"
+    },
+    {
+      "name": "examples/next",
+      "path": "../examples/next"
     }
   ],
   "settings": {
+    "search.exclude": {
+      "docs": true
+    },
     "search.useIgnoreFiles": true,
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
