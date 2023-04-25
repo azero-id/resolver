@@ -1,0 +1,58 @@
+{
+  "name": "@azns/resolver-core",
+  "author": "AZERO Domains <hello@azero.domains> (https://azero.domains)",
+  "version": "0.0.1",
+  "description": "Vanilla JS/TS-Library for resolving AZERO Domains",
+  "homepage": "https://azero.domains",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azero-domains/resolver.git",
+    "directory": "packages/resolver-core"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "package.json",
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16 <=18",
+    "pnpm": "8"
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "lint": "prettier . --check && eslint",
+    "lint:fix": "prettier . --write && eslint --fix",
+    "lint:format": "prettier . --write",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@polkadot/api": ">=10",
+    "@polkadot/api-contract": ">=10",
+    "@polkadot/types": ">=10",
+    "@polkadot/util": ">=11",
+    "loglevel": ">=1.8"
+  },
+  "keywords": [
+    "azero",
+    "domains",
+    "resolver",
+    "vanilla",
+    "js",
+    "ts",
+    "library",
+    "dapps",
+    "wallet",
+    "web3"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "root",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azero-domains/resolver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azero-domains/resolver/issues"
+  },
+  "engines": {
+    "node": ">=16 <=18",
+    "pnpm": "8"
+  },
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter '@azns/resolver-core' dev",
+    "dev:vanilla-example": "pnpm run build && pnpm --filter 'vanilla-example' dev",
+    "build": "pnpm --filter '@azns/resolver-core' build",
+    "changeset:version": "changeset version && pnpm install --lockfile-only",
+    "changeset:publish": "pnpm build && changeset publish",
+    "lint": "pnpm --filter '@azns/resolver-core' lint",
+    "lint:fix": "pnpm --filter '@azns/resolver-core' lint:fix",
+    "lint:format": "pnpm --filter '@azns/resolver-core' lint:format",
+    "typedoc": "typedoc"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "pnpm lint:fix",
+      "pnpm lint:format"
+    ],
+    "*.{json,md,mdx,html,css,yml,yaml}": [
+      "pnpm lint:format"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.13",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.7",
+    "simple-git-hooks": "^2.8.1",
+    "tsup": "^6.7.0",
+    "typedoc": "^0.24.4",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.1"
+  }
+}

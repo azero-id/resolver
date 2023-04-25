@@ -1,0 +1,3 @@
+# Local deployment files & artifacts
+src/deployments/**/*
+!src/deployments/**/metadata.json
