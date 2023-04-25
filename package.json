@@ -24,7 +24,7 @@
     "lint": "pnpm --filter '@azns/resolver-core' lint",
     "lint:fix": "pnpm --filter '@azns/resolver-core' lint:fix",
     "lint:format": "pnpm --filter '@azns/resolver-core' lint:format",
-    "typedoc": "typedoc"
+    "typedoc": "typedoc --options typedoc.json"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

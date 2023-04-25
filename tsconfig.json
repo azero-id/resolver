@@ -8,6 +8,7 @@
     "esModuleInterop": true,
     "allowJs": true,
     "resolveJsonModule": true,
+    "jsx": "preserve",
     "types": ["node"],
     "baseUrl": "."
   },
