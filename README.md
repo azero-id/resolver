@@ -4,12 +4,22 @@
 ![Typescript](https://img.shields.io/badge/TypeScript-red)
 ![React](https://img.shields.io/badge/React-gray)
 
+---
+
+1. [Testnet Disclaimer 🚨](#testnet-disclaimer-)
+2. [Getting Started](#getting-started)
+   1. [Vanilla JS/TS](#vanilla-jsts)
+   2. [React/Next.js Hooks](#reactnextjs-hooks)
+3. [Run Examples](#run-examples)
+
+---
+
 This repository contains JS/TS libraries to resolve domains & addresses registered with [AZERO Domains](https://azero.domains/).
 
 It's built as a monorepo and contains the following packages:
 
-- [x] `@azns/resolver-core` – Vanilla JS/TS Library
-- [ ] `@azns/resolver-react` – React-Hooks Library (uses `@azns/resolver-core`)
+- `@azns/resolver-core` – Vanilla JS/TS Library
+- `@azns/resolver-react` – React-Hooks Library (depends on `@azns/resolver-core`)
 
 Additionally, multiple working examples are provided for both packages.
 
@@ -23,6 +33,8 @@ Currently, this package is not production-ready and only works on the [Aleph Zer
 
 ## Getting Started
 
+### Vanilla JS/TS
+
 Install the package from the npm registry:
 
 ```bash
@@ -33,27 +45,67 @@ pnpm add @azns/resolver-core
 yarn add @azns/resolver-core
 ```
 
-Resolve domain → address via [`resolveDomainToAddress`](https://azero-domains.github.io/resolver/functions/resolveDomainToAddress.html):
+Resolve domain → address via [`resolveDomainToAddress`](https://azero-domains.github.io/resolver/functions/_azns_resolver_core.resolveDomainToAddress.html):
 
 ```ts
 import { SupportedChainId, resolveDomainToAddress } from '@azns/resolver-core'
 
-const address = await resolveDomainToAddress('domains.azero', {
+const address = await resolveDomainToAddress('domains.tzero', {
   chainId: SupportedChainId.AlephZeroTestnet,
 })
 ```
 
-Resolve address → primary domain(s) via [`resolveAddressToDomain`](https://azero-domains.github.io/resolver/functions/resolveAddressToDomain.html):
+Resolve address → primary domain(s) via [`resolveAddressToDomain`](https://azero-domains.github.io/resolver/functions/_azns_resolver_core.resolveAddressToDomain.html):
 
 ```ts
 import { SupportedChainId, resolveAddressToDomain } from '@azns/resolver-core'
 
-const address = await resolveAddressToDomain('5GgzS1G34d2wRxtVBnSkA8GQBj4ySnGqQb34ix2ULwVzKdWQ', {
+const primaryDomains = await resolveAddressToDomain(
+  '5GgzS1G34d2wRxtVBnSkA8GQBj4ySnGqQb34ix2ULwVzKdWQ',
+  {
+    chainId: SupportedChainId.AlephZeroTestnet,
+  },
+)
+```
+
+### React/Next.js Hooks
+
+Install the packages from the npm registry:
+
+```bash
+npm install @azns/resolver-core @azns/resolver-react
+# or
+pnpm add @azns/resolver-core @azns/resolver-react
+# or
+yarn add @azns/resolver-core @azns/resolver-react
+```
+
+Resolve domain → address via [`useResolveDomainToAddress`](https://azero-domains.github.io/resolver/functions/_azns_resolver_react.useResolveDomainToAddress.html):
+
+```ts
+import { SupportedChainId } from '@azns/resolver-core'
+import { useResolveDomainToAddress } from '@azns/resolver-react'
+
+const { address } = useResolveDomainToAddress('domains.tzero', {
   chainId: SupportedChainId.AlephZeroTestnet,
 })
 ```
 
-## Run Example
+Resolve address → primary domain(s) via [`useResolveAddressToDomain`](https://azero-domains.github.io/resolver/functions/_azns_resolver_react.useResolveAddressToDomain.html):
+
+```ts
+import { SupportedChainId } from '@azns/resolver-core'
+import { useResolveAddressToDomain } from '@azns/resolver-react'
+
+const { primaryDomain } = useResolveAddressToDomain(
+  '5GgzS1G34d2wRxtVBnSkA8GQBj4ySnGqQb34ix2ULwVzKdWQ',
+  {
+    chainId: SupportedChainId.AlephZeroTestnet,
+  },
+)
+```
+
+## Run Examples
 
 ```bash
 # Setup Node.js (recommended via nvm)
@@ -64,8 +116,13 @@ const address = await resolveAddressToDomain('5GgzS1G34d2wRxtVBnSkA8GQBj4ySnGqQb
 # Install dependencies
 pnpm i
 
-# Build packages & Run vanilla-example via Vite
-pnpm run dev:vanilla-example
+# Build packages & Run examples:
+#  - Vanilla Example starts on http://localhost:4000
+#  - Next.js Example starts on http://localhost:3000
+pnpm run dev:examples
 ```
 
-<img src="vanilla-example.png" width="500" height="auto" alt="Vanilla JS/TS Library Example Frontend" />
+<p align="middle">
+  <img src="vanilla-example.png" width="400" height="auto" alt="Vanilla Example with `@azns/resolver-core`" />
+  <img src="next-example.png" width="400" height="auto" alt="React & Next.js Example with `@azns/resolver-react`" />
+</p>

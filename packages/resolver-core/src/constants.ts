@@ -41,7 +41,7 @@ export const allChains: Chain[] = [alephzero, alephzeroTestnet, development]
 export enum SupportedTLD {
   AZERO = 'azero',
   A0 = 'a0',
-  TAZERO = 'tazero',
+  TZERO = 'tzero',
 }
 
 /**
@@ -64,6 +64,6 @@ export const CONTRACT_ADDRESSES: {
     [ContractId.Router]: undefined, // TODO
   },
   [SupportedChainId.AlephZeroTestnet]: {
-    [ContractId.Router]: '5GQV65Yd8c1HG2VWiGxfwJgBsph1A5rbAFCGXsnXCb9LHyvB',
+    [ContractId.Router]: '5E8gBS1MbRQnG8HGVngPyQbBxw7CBeMnzN1LoZZynNMLwTJE',
   },
 }

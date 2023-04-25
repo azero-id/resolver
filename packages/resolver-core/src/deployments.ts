@@ -17,7 +17,7 @@ export const getSupportedTLDs = (chainId: SupportedChainId) => {
     [_ in SupportedChainId]?: SupportedTLD[]
   } = {
     [SupportedChainId.AlephZero]: [SupportedTLD.AZERO, SupportedTLD.A0],
-    [SupportedChainId.AlephZeroTestnet]: [SupportedTLD.TAZERO],
+    [SupportedChainId.AlephZeroTestnet]: [SupportedTLD.TZERO],
   }
   return tlds[chainId] || []
 }

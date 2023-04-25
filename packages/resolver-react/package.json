@@ -1,0 +1,62 @@
+{
+  "name": "@azns/resolver-react",
+  "author": "AZERO Domains <hello@azero.domains> (https://azero.domains)",
+  "version": "0.0.1",
+  "description": "React Hooks Library for resolving AZERO Domains",
+  "homepage": "https://azero.domains",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azero-domains/resolver.git",
+    "directory": "packages/resolver-react"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "package.json",
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16 <=18",
+    "pnpm": "8"
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "lint": "prettier . --check && eslint",
+    "lint:fix": "prettier . --write && eslint --fix",
+    "lint:format": "prettier . --write",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@azns/resolver-core": "workspace:*",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.38"
+  },
+  "keywords": [
+    "azero",
+    "domains",
+    "resolver",
+    "react",
+    "hooks",
+    "next",
+    "nextjs",
+    "js",
+    "ts",
+    "library",
+    "dapps",
+    "wallet",
+    "web3"
+  ]
+}

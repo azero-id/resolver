@@ -18,9 +18,9 @@ if (chain_select && input_router_address && input_1 && button_1 && result_1) {
         [ContractId.Router]: customRouterAddress,
       }
       const address = await resolveDomainToAddress(domain, {
+        debug: true,
         chainId,
         ...(customRouterAddress && { customContractAddresses }),
-        debug: true,
       })
       result_1.innerHTML = address
         ? `<span style="color:#E6FD3A;">${address}</span>`
@@ -45,9 +45,9 @@ if (chain_select && input_router_address && input_2 && button_2 && result_2) {
         [ContractId.Router]: customRouterAddress,
       }
       const primaryDomains = await resolveAddressToDomain(address, {
+        debug: true,
         chainId,
         ...(customRouterAddress && { customContractAddresses }),
-        debug: true,
       })
       result_2.innerHTML = primaryDomains?.length
         ? `<span style="color:#E6FD3A;">${primaryDomains}</span>`

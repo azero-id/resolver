@@ -4,15 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 4000",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "start": "vite preview"
   },
   "dependencies": {
     "@azns/resolver-core": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "^5.0.2",
-    "vite": "^4.3.0"
+    "vite": "^4.3.1"
   }
 }

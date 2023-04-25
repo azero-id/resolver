@@ -7,5 +7,5 @@
   "fixed": [],
   "linked": [],
   "updateInternalDependencies": "patch",
-  "ignore": ["vanilla-example"]
+  "ignore": ["vanilla-example", "next-example"]
 }
