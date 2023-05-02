@@ -1,5 +1,11 @@
 # @azns/resolver-core
 
+## 0.0.4
+
+### Patch Changes
+
+- [`8243d86`](https://github.com/azero-id/resolver/commit/8243d8648b6e8bfcbe88b00e8f0b4cd65eae6e5e) - Update brand & domains to "AZERO.ID"
+
 ## 0.0.3
 
 ### Patch Changes
