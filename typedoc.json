@@ -1,7 +1,7 @@
 {
   "entryPoints": ["packages/*"],
   "exclude": ["examples/**/*"],
-  "name": "AZERO Domains – Resolver",
+  "name": "AZERO.ID – Resolver",
   "entryPointStrategy": "packages",
   "includeVersion": true
 }

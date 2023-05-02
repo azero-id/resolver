@@ -1,11 +1,12 @@
 {
   "name": "root",
+  "homepage": "https://azero.id",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/azero-domains/resolver.git"
+    "url": "git+https://github.com/azero-id/resolver.git"
   },
   "bugs": {
-    "url": "https://github.com/azero-domains/resolver/issues"
+    "url": "https://github.com/azero-id/resolver/issues"
   },
   "engines": {
     "node": ">=16 <=18",

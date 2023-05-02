@@ -1,13 +1,13 @@
 {
   "name": "@azns/resolver-core",
-  "author": "AZERO Domains <hello@azero.domains> (https://azero.domains)",
+  "author": "AZERO.ID <hello@azero.id> (https://azero.id)",
   "version": "0.0.3",
-  "description": "Vanilla JS/TS Library for resolving AZERO Domains",
-  "homepage": "https://azero.domains",
+  "description": "Vanilla JS/TS Library for resolving Domains issued by AZERO.ID",
+  "homepage": "https://azero.id",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/azero-domains/resolver.git",
+    "url": "git+https://github.com/azero-id/resolver.git",
     "directory": "packages/resolver-core"
   },
   "main": "dist/index.js",

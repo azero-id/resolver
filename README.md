@@ -1,4 +1,4 @@
-# AZERO Domains – Resolver
+# AZERO.ID – Resolver
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![Typescript](https://img.shields.io/badge/TypeScript-red)
@@ -14,7 +14,7 @@
 
 ---
 
-This repository contains JS/TS libraries to resolve domains & addresses registered with [AZERO Domains](https://azero.domains/).
+This repository contains JS/TS libraries to resolve domains & addresses registered with [AZERO.ID](https://azero.id).
 
 It's built as a monorepo and contains the following packages:
 
@@ -23,9 +23,9 @@ It's built as a monorepo and contains the following packages:
 
 Additionally, multiple working examples are provided for both packages.
 
-📃 **Integration Guide:** https://docs.azero.domains/integration
+📃 **Integration Guide:** https://docs.azero.id/integration
 
-👩‍💻 **Interface Documentation:** https://azero-domains.github.io/resolver/
+👩‍💻 **Interface Documentation:** https://azero-id.github.io/resolver/
 
 ## Testnet Disclaimer 🚨
 
@@ -45,7 +45,7 @@ pnpm add @azns/resolver-core
 yarn add @azns/resolver-core
 ```
 
-Resolve domain → address via [`resolveDomainToAddress`](https://azero-domains.github.io/resolver/functions/_azns_resolver_core.resolveDomainToAddress.html):
+Resolve domain → address via [`resolveDomainToAddress`](https://azero-id.github.io/resolver/functions/_azns_resolver_core.resolveDomainToAddress.html):
 
 ```ts
 import { SupportedChainId, resolveDomainToAddress } from '@azns/resolver-core'
@@ -55,7 +55,7 @@ const address = await resolveDomainToAddress('domains.tzero', {
 })
 ```
 
-Resolve address → primary domain(s) via [`resolveAddressToDomain`](https://azero-domains.github.io/resolver/functions/_azns_resolver_core.resolveAddressToDomain.html):
+Resolve address → primary domain(s) via [`resolveAddressToDomain`](https://azero-id.github.io/resolver/functions/_azns_resolver_core.resolveAddressToDomain.html):
 
 ```ts
 import { SupportedChainId, resolveAddressToDomain } from '@azns/resolver-core'
@@ -80,7 +80,7 @@ pnpm add @azns/resolver-core @azns/resolver-react
 yarn add @azns/resolver-core @azns/resolver-react
 ```
 
-Resolve domain → address via [`useResolveDomainToAddress`](https://azero-domains.github.io/resolver/functions/_azns_resolver_react.useResolveDomainToAddress.html):
+Resolve domain → address via [`useResolveDomainToAddress`](https://azero-id.github.io/resolver/functions/_azns_resolver_react.useResolveDomainToAddress.html):
 
 ```ts
 import { SupportedChainId } from '@azns/resolver-core'
@@ -91,7 +91,7 @@ const { address } = useResolveDomainToAddress('domains.tzero', {
 })
 ```
 
-Resolve address → primary domain(s) via [`useResolveAddressToDomain`](https://azero-domains.github.io/resolver/functions/_azns_resolver_react.useResolveAddressToDomain.html):
+Resolve address → primary domain(s) via [`useResolveAddressToDomain`](https://azero-id.github.io/resolver/functions/_azns_resolver_react.useResolveAddressToDomain.html):
 
 ```ts
 import { SupportedChainId } from '@azns/resolver-core'
