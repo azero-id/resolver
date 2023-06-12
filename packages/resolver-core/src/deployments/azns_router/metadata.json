@@ -1,12 +1,12 @@
 {
   "source": {
-    "hash": "0xe124ddda12182ca3be958cfeff1096385dc893ad5b3c8dad04bf8b923c3ff142",
+    "hash": "0xda29dd46a262c10728439c0435ad89ec2f36c76da662adcb887a61fa5adfc05f",
     "language": "ink! 4.2.0",
-    "compiler": "rustc 1.69.0",
+    "compiler": "rustc 1.68.0-nightly",
     "build_info": {
       "build_mode": "Release",
       "cargo_contract_version": "2.1.0",
-      "rust_toolchain": "stable-aarch64-apple-darwin",
+      "rust_toolchain": "nightly-aarch64-apple-darwin",
       "wasm_opt_settings": {
         "keep_debug_symbols": false,
         "optimization_passes": "Z"
@@ -15,8 +15,10 @@
   },
   "contract": {
     "name": "azns_router",
-    "version": "0.1.0",
-    "authors": ["AZERO Domains <hello@azero.domains>"]
+    "version": "1.0.0",
+    "authors": [
+      "AZERO.ID <hello@azero.id>"
+    ]
   },
   "spec": {
     "constructors": [
@@ -25,7 +27,9 @@
           {
             "label": "admin",
             "type": {
-              "displayName": ["AccountId"],
+              "displayName": [
+                "AccountId"
+              ],
               "type": 0
             }
           }
@@ -35,7 +39,10 @@
         "label": "new",
         "payable": false,
         "returnType": {
-          "displayName": ["ink_primitives", "ConstructorResult"],
+          "displayName": [
+            "ink_primitives",
+            "ConstructorResult"
+          ],
           "type": 4
         },
         "selector": "0x9bae9d5e"
@@ -44,34 +51,49 @@
     "docs": [],
     "environment": {
       "accountId": {
-        "displayName": ["AccountId"],
+        "displayName": [
+          "AccountId"
+        ],
         "type": 0
       },
       "balance": {
-        "displayName": ["Balance"],
+        "displayName": [
+          "Balance"
+        ],
         "type": 22
       },
       "blockNumber": {
-        "displayName": ["BlockNumber"],
+        "displayName": [
+          "BlockNumber"
+        ],
         "type": 25
       },
       "chainExtension": {
-        "displayName": ["ChainExtension"],
+        "displayName": [
+          "ChainExtension"
+        ],
         "type": 26
       },
       "hash": {
-        "displayName": ["Hash"],
+        "displayName": [
+          "Hash"
+        ],
         "type": 23
       },
       "maxEventTopics": 4,
       "timestamp": {
-        "displayName": ["Timestamp"],
+        "displayName": [
+          "Timestamp"
+        ],
         "type": 24
       }
     },
     "events": [],
     "lang_error": {
-      "displayName": ["ink", "LangError"],
+      "displayName": [
+        "ink",
+        "LangError"
+      ],
       "type": 6
     },
     "messages": [
@@ -80,14 +102,18 @@
           {
             "label": "tld",
             "type": {
-              "displayName": ["Vec"],
+              "displayName": [
+                "Vec"
+              ],
               "type": 7
             }
           },
           {
             "label": "registry_addr",
             "type": {
-              "displayName": ["AccountId"],
+              "displayName": [
+                "AccountId"
+              ],
               "type": 0
             }
           }
@@ -98,7 +124,10 @@
         "mutates": true,
         "payable": false,
         "returnType": {
-          "displayName": ["ink", "MessageResult"],
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
           "type": 9
         },
         "selector": "0xc997efe3"
@@ -108,14 +137,18 @@
           {
             "label": "tld",
             "type": {
-              "displayName": ["Vec"],
+              "displayName": [
+                "Vec"
+              ],
               "type": 7
             }
           },
           {
             "label": "registry_addr",
             "type": {
-              "displayName": ["AccountId"],
+              "displayName": [
+                "AccountId"
+              ],
               "type": 0
             }
           }
@@ -126,7 +159,10 @@
         "mutates": true,
         "payable": false,
         "returnType": {
-          "displayName": ["ink", "MessageResult"],
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
           "type": 9
         },
         "selector": "0x562de86b"
@@ -139,7 +175,10 @@
         "mutates": false,
         "payable": false,
         "returnType": {
-          "displayName": ["ink", "MessageResult"],
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
           "type": 12
         },
         "selector": "0x91cf4131"
@@ -149,7 +188,9 @@
           {
             "label": "tld",
             "type": {
-              "displayName": ["String"],
+              "displayName": [
+                "String"
+              ],
               "type": 8
             }
           }
@@ -160,7 +201,10 @@
         "mutates": false,
         "payable": false,
         "returnType": {
-          "displayName": ["ink", "MessageResult"],
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
           "type": 13
         },
         "selector": "0x15a5d20a"
@@ -170,7 +214,9 @@
           {
             "label": "domain",
             "type": {
-              "displayName": ["String"],
+              "displayName": [
+                "String"
+              ],
               "type": 8
             }
           }
@@ -181,7 +227,10 @@
         "mutates": false,
         "payable": false,
         "returnType": {
-          "displayName": ["ink", "MessageResult"],
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
           "type": 15
         },
         "selector": "0xd259f7ba"
@@ -191,25 +240,34 @@
           {
             "label": "account",
             "type": {
-              "displayName": ["AccountId"],
+              "displayName": [
+                "AccountId"
+              ],
               "type": 0
             }
           },
           {
             "label": "tld",
             "type": {
-              "displayName": ["Option"],
+              "displayName": [
+                "Option"
+              ],
               "type": 17
             }
           }
         ],
         "default": false,
-        "docs": [" @returns list of (registry-address, primary-domain) for given account"],
+        "docs": [
+          " @returns list of (registry-address, primary-domain) for given account"
+        ],
         "label": "get_primary_domains",
         "mutates": false,
         "payable": false,
         "returnType": {
-          "displayName": ["ink", "MessageResult"],
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
           "type": 18
         },
         "selector": "0xdf3a358e"
@@ -222,31 +280,71 @@
         "mutates": false,
         "payable": false,
         "returnType": {
-          "displayName": ["ink", "MessageResult"],
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
           "type": 21
         },
         "selector": "0x57b8a8a7"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [],
+        "label": "get_pending_admin",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 13
+        },
+        "selector": "0xbcd31d76"
       },
       {
         "args": [
           {
             "label": "account",
             "type": {
-              "displayName": ["AccountId"],
-              "type": 0
+              "displayName": [
+                "Option"
+              ],
+              "type": 14
             }
           }
         ],
         "default": false,
         "docs": [],
-        "label": "set_admin",
+        "label": "transfer_ownership",
         "mutates": true,
         "payable": false,
         "returnType": {
-          "displayName": ["ink", "MessageResult"],
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
           "type": 9
         },
-        "selector": "0x798dcad5"
+        "selector": "0x107e33ea"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [],
+        "label": "accept_ownership",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 9
+        },
+        "selector": "0xb55be9f0"
       },
       {
         "args": [
@@ -264,8 +362,11 @@
         "mutates": true,
         "payable": false,
         "returnType": {
-          "displayName": ["ink", "MessageResult"],
-          "type": 9
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 4
         },
         "selector": "0x1345543d"
       }
@@ -287,6 +388,44 @@
             },
             {
               "layout": {
+                "enum": {
+                  "dispatchKey": "0x00000000",
+                  "name": "Option",
+                  "variants": {
+                    "0": {
+                      "fields": [],
+                      "name": "None"
+                    },
+                    "1": {
+                      "fields": [
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x00000000",
+                              "ty": 0
+                            }
+                          },
+                          "name": "0"
+                        }
+                      ],
+                      "name": "Some"
+                    }
+                  }
+                }
+              },
+              "name": "pending_admin"
+            },
+            {
+              "layout": {
+                "leaf": {
+                  "key": "0x00000000",
+                  "ty": 3
+                }
+              },
+              "name": "registry"
+            },
+            {
+              "layout": {
                 "root": {
                   "layout": {
                     "leaf": {
@@ -298,15 +437,6 @@
                 }
               },
               "name": "routes"
-            },
-            {
-              "layout": {
-                "leaf": {
-                  "key": "0x00000000",
-                  "ty": 3
-                }
-              },
-              "name": "registry"
             }
           ],
           "name": "Router"
@@ -329,7 +459,11 @@
             ]
           }
         },
-        "path": ["ink_primitives", "types", "AccountId"]
+        "path": [
+          "ink_primitives",
+          "types",
+          "AccountId"
+        ]
       }
     },
     {
@@ -398,7 +532,9 @@
             "type": 6
           }
         ],
-        "path": ["Result"]
+        "path": [
+          "Result"
+        ]
       }
     },
     {
@@ -422,7 +558,10 @@
             ]
           }
         },
-        "path": ["ink_primitives", "LangError"]
+        "path": [
+          "ink_primitives",
+          "LangError"
+        ]
       }
     },
     {
@@ -480,7 +619,9 @@
             "type": 6
           }
         ],
-        "path": ["Result"]
+        "path": [
+          "Result"
+        ]
       }
     },
     {
@@ -520,7 +661,9 @@
             "type": 11
           }
         ],
-        "path": ["Result"]
+        "path": [
+          "Result"
+        ]
       }
     },
     {
@@ -568,7 +711,11 @@
             ]
           }
         },
-        "path": ["azns_router", "azns_router", "Error"]
+        "path": [
+          "azns_router",
+          "azns_router",
+          "Error"
+        ]
       }
     },
     {
@@ -608,7 +755,9 @@
             "type": 6
           }
         ],
-        "path": ["Result"]
+        "path": [
+          "Result"
+        ]
       }
     },
     {
@@ -648,7 +797,9 @@
             "type": 6
           }
         ],
-        "path": ["Result"]
+        "path": [
+          "Result"
+        ]
       }
     },
     {
@@ -679,7 +830,9 @@
             "type": 0
           }
         ],
-        "path": ["Option"]
+        "path": [
+          "Option"
+        ]
       }
     },
     {
@@ -719,7 +872,9 @@
             "type": 6
           }
         ],
-        "path": ["Result"]
+        "path": [
+          "Result"
+        ]
       }
     },
     {
@@ -759,7 +914,9 @@
             "type": 11
           }
         ],
-        "path": ["Result"]
+        "path": [
+          "Result"
+        ]
       }
     },
     {
@@ -790,7 +947,9 @@
             "type": 8
           }
         ],
-        "path": ["Option"]
+        "path": [
+          "Option"
+        ]
       }
     },
     {
@@ -830,7 +989,9 @@
             "type": 6
           }
         ],
-        "path": ["Result"]
+        "path": [
+          "Result"
+        ]
       }
     },
     {
@@ -847,7 +1008,10 @@
       "id": 20,
       "type": {
         "def": {
-          "tuple": [0, 8]
+          "tuple": [
+            0,
+            8
+          ]
         }
       }
     },
@@ -888,7 +1052,9 @@
             "type": 6
           }
         ],
-        "path": ["Result"]
+        "path": [
+          "Result"
+        ]
       }
     },
     {
@@ -912,7 +1078,11 @@
             ]
           }
         },
-        "path": ["ink_primitives", "types", "Hash"]
+        "path": [
+          "ink_primitives",
+          "types",
+          "Hash"
+        ]
       }
     },
     {
@@ -937,7 +1107,11 @@
         "def": {
           "variant": {}
         },
-        "path": ["ink_env", "types", "NoChainExtension"]
+        "path": [
+          "ink_env",
+          "types",
+          "NoChainExtension"
+        ]
       }
     }
   ],

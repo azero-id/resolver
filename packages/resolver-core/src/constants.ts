@@ -64,6 +64,6 @@ export const CONTRACT_ADDRESSES: {
     [ContractId.Router]: undefined, // TODO
   },
   [SupportedChainId.AlephZeroTestnet]: {
-    [ContractId.Router]: '5E8gBS1MbRQnG8HGVngPyQbBxw7CBeMnzN1LoZZynNMLwTJE',
+    [ContractId.Router]: '5HfQopC1yQSoG83auWgRLTxhWWFxiVQWT74LLXeXMLJDFBvP',
   },
 }
