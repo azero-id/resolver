@@ -1,5 +1,11 @@
 # @azns/resolver-core
 
+## 0.0.5
+
+### Patch Changes
+
+- [#7](https://github.com/azero-id/resolver/pull/7) [`8bfe137`](https://github.com/azero-id/resolver/commit/8bfe1374a22c10986340621dff36bbafbf45431b) Thanks [@wottpal](https://github.com/wottpal)! - Update testnet deployments
+
 ## 0.0.4
 
 ### Patch Changes
