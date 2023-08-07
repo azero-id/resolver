@@ -1,4 +1,4 @@
-import { ResolveOptions, resolveAddressToDomain } from '@azns/resolver-core'
+import { ResolveAddressError, ResolveOptions, resolveAddressToDomain } from '@azns/resolver-core'
 import { useEffect, useState } from 'react'
 
 /**
@@ -9,43 +9,49 @@ export const useResolveAddressToDomain = (
   address: string | undefined,
   options?: Partial<ResolveOptions>,
 ) => {
-  const [primaryDomains, setPrimaryDomains] = useState<string[]>([])
+  const [primaryDomain, setPrimaryDomain] = useState<string | null | undefined>()
+  const [allPrimaryDomains, setAllPrimaryDomains] = useState<string[] | undefined>()
   const [isLoading, setIsLoading] = useState(false)
   const [hasError, setHasError] = useState(false)
-  const [errorMessage, setErrorMessage] = useState<string>()
+  const [error, setError] = useState<ResolveAddressError>()
 
   useEffect(() => {
     ;(async () => {
       if (!address) {
-        setPrimaryDomains([])
+        setPrimaryDomain(undefined)
+        setAllPrimaryDomains(undefined)
         setHasError(false)
-        setErrorMessage(undefined)
+        setError(undefined)
+        setIsLoading(false)
         return
       }
 
       setIsLoading(true)
       setHasError(false)
-      setErrorMessage(undefined)
-      try {
-        const domains = await resolveAddressToDomain(address, options)
-        setPrimaryDomains(domains)
-      } catch (e) {
-        console.error(e)
+      setError(undefined)
+
+      const { primaryDomain, allPrimaryDomains, error } = await resolveAddressToDomain(
+        address,
+        options,
+      )
+      if (error) {
         setHasError(true)
-        setPrimaryDomains([])
-        const errorMessage = (e as Error)?.message || 'Error'
-        setErrorMessage(errorMessage)
-      } finally {
-        setIsLoading(false)
+        setError(error)
+        setPrimaryDomain(undefined)
+        setAllPrimaryDomains(undefined)
+      } else {
+        setPrimaryDomain(primaryDomain)
+        setAllPrimaryDomains(allPrimaryDomains)
       }
+      setIsLoading(false)
     })()
   }, [address, options?.chainId, options?.customContractAddresses?.azns_router])
 
   return {
-    primaryDomain: primaryDomains?.length ? primaryDomains[0] : null,
-    primaryDomains,
+    primaryDomain,
+    allPrimaryDomains,
     isLoading,
     hasError,
-    errorMessage,
+    error,
   }
 }
