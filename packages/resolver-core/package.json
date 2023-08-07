@@ -1,7 +1,7 @@
 {
   "name": "@azns/resolver-core",
   "author": "AZERO.ID <hello@azero.id> (https://azero.id)",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Vanilla JS/TS Library for resolving Domains issued by AZERO.ID",
   "homepage": "https://azero.id",
   "type": "module",
