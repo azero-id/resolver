@@ -7,7 +7,7 @@ export default function Home() {
   const [customRouterAddress, setCustomRouterAddress] = useState<string>()
   const [lookupDomain, setLookupDomain] = useState<string>('domains.tzero')
   const [lookupAddress, setLookupAddress] = useState<string>(
-    '5GgzS1G34d2wRxtVBnSkA8GQBj4ySnGqQb34ix2ULwVzKdWQ',
+    '5EFJEY4DG2FnzcuCZpnRjjzT4x7heeEXuoYy1yAoUmshEhAP',
   )
 
   // Resolve Domain → Address
