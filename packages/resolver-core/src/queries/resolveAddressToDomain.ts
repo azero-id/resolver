@@ -37,7 +37,7 @@ export const resolveAddressToDomain = async (
     log.setLevel(_o.debug ? 'DEBUG' : 'WARN')
 
     // Initialize API & contract
-    const api = await getApi(_o.chainId)
+    const api = _o?.customApi || (await getApi(_o.chainId))
     const { contract: routerContract } = await getContract(
       api,
       _o.chainId,

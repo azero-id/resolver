@@ -59,7 +59,7 @@ export const resolveDomainToAddress = async (
       }
 
     // Initialize API & contract
-    const api = await getApi(_o.chainId)
+    const api = _o?.customApi || (await getApi(_o.chainId))
     const { contract: routerContract } = await getContract(
       api,
       _o.chainId,
