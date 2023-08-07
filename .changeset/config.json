@@ -6,6 +6,7 @@
   "baseBranch": "main",
   "fixed": [],
   "linked": [],
-  "updateInternalDependencies": "patch",
+  "updateInternalDependencies": "minor",
+  "bumpVersionsWithWorkspaceProtocolOnly": true,
   "ignore": ["vanilla-example", "next-example"]
 }
