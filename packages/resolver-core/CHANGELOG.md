@@ -1,5 +1,11 @@
 # @azns/resolver-core
 
+## 2.0.0
+
+### Major Changes
+
+- [#16](https://github.com/azero-id/resolver/pull/16) [`8bdcdfe`](https://github.com/azero-id/resolver/commit/8bdcdfe59c9d34862cab81ce0e6eaf05c442df04) Thanks [@wottpal](https://github.com/wottpal)! - Release 1.0.0 as `changeset` incorrectly released @azns/resolver-react@1.0.0 to first major release.
+
 ## 1.0.0
 
 ### Major Changes
