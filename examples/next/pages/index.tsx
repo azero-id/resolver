@@ -70,7 +70,7 @@ export default function Home() {
         {domainResolver.isLoading ? (
           <div className="text-gray-500">Loading...</div>
         ) : domainResolver.hasError ? (
-          <div className="text-red-500">{domainResolver.errorMessage}</div>
+          <div className="text-red-500">{domainResolver.error?.message}</div>
         ) : domainResolver.address ? (
           <div className="text-[#E6FD3A]">{domainResolver.address}</div>
         ) : (
@@ -89,7 +89,7 @@ export default function Home() {
         {addressResolver.isLoading ? (
           <div className="text-gray-500">Loading...</div>
         ) : addressResolver.hasError ? (
-          <div className="text-red-500">{addressResolver.errorMessage}</div>
+          <div className="text-red-500">{addressResolver.error?.message}</div>
         ) : addressResolver.primaryDomain ? (
           <div className="text-[#E6FD3A]">{addressResolver.primaryDomain}</div>
         ) : (

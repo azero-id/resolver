@@ -1,4 +1,4 @@
-import { ResolveOptions, resolveDomainToAddress } from '@azns/resolver-core'
+import { ResolveDomainError, ResolveOptions, resolveDomainToAddress } from '@azns/resolver-core'
 import { useEffect, useState } from 'react'
 
 /**
@@ -9,35 +9,34 @@ export const useResolveDomainToAddress = (
   domain: string | undefined,
   options?: Partial<ResolveOptions>,
 ) => {
-  const [address, setAddress] = useState<string | null>()
+  const [address, setAddress] = useState<string | null | undefined>()
   const [isLoading, setIsLoading] = useState(false)
   const [hasError, setHasError] = useState(false)
-  const [errorMessage, setErrorMessage] = useState<string>()
+  const [error, setError] = useState<ResolveDomainError>()
 
   useEffect(() => {
     ;(async () => {
       if (!domain) {
         setAddress(undefined)
         setHasError(false)
-        setErrorMessage(undefined)
+        setError(undefined)
+        setIsLoading(false)
         return
       }
 
       setIsLoading(true)
       setHasError(false)
-      setErrorMessage(undefined)
-      try {
-        const address = await resolveDomainToAddress(domain, options)
-        setAddress(address)
-      } catch (e) {
-        console.error(e)
+      setError(undefined)
+
+      const { address, error } = await resolveDomainToAddress(domain, options)
+      if (error) {
         setHasError(true)
+        setError(error)
         setAddress(undefined)
-        const errorMessage = (e as Error)?.message || 'Error'
-        setErrorMessage(errorMessage)
-      } finally {
-        setIsLoading(false)
+      } else {
+        setAddress(address)
       }
+      setIsLoading(false)
     })()
   }, [domain, options?.chainId, options?.customContractAddresses?.azns_router])
 
@@ -45,6 +44,6 @@ export const useResolveDomainToAddress = (
     address,
     isLoading,
     hasError,
-    errorMessage,
+    error,
   }
 }
