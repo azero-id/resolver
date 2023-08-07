@@ -10,7 +10,7 @@ import { ResolveOptions } from '../types'
  * Resolves a given domain to the assigned address.
  * @param domain Domain to resolve (e.g. `domains.azero`)
  * @param options Options (see `ResolveOptions` definition)
- * @returns Address as a string (e.g. `5GgzS1G34d2wRxtVBnSkA8GQBj4ySnGqQb34ix2ULwVzKdWQ`) or null if not found
+ * @returns Address as a string (e.g. `5EFJEY4DG2FnzcuCZpnRjjzT4x7heeEXuoYy1yAoUmshEhAP`) or null if not found
  */
 export const resolveDomainToAddress = async (
   domain: string,

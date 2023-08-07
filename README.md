@@ -61,7 +61,7 @@ Resolve address → primary domain(s) via [`resolveAddressToDomain`](https://aze
 import { SupportedChainId, resolveAddressToDomain } from '@azns/resolver-core'
 
 const primaryDomains = await resolveAddressToDomain(
-  '5GgzS1G34d2wRxtVBnSkA8GQBj4ySnGqQb34ix2ULwVzKdWQ',
+  '5EeBxqQ7Kz6hcchEgkBn9ybBS4UaqGggi2Rq5weNyEZ9DjAK',
   {
     chainId: SupportedChainId.AlephZeroTestnet,
   },
@@ -98,7 +98,7 @@ import { SupportedChainId } from '@azns/resolver-core'
 import { useResolveAddressToDomain } from '@azns/resolver-react'
 
 const { primaryDomain } = useResolveAddressToDomain(
-  '5GgzS1G34d2wRxtVBnSkA8GQBj4ySnGqQb34ix2ULwVzKdWQ',
+  '5EeBxqQ7Kz6hcchEgkBn9ybBS4UaqGggi2Rq5weNyEZ9DjAK',
   {
     chainId: SupportedChainId.AlephZeroTestnet,
   },

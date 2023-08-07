@@ -10,7 +10,7 @@ import { ResolveOptions } from '../types'
  * Resolves a given address to the assigned primary domain(s).
  * When the address has multiple primary domains set at different tld-registries,
  * the returned array can hold multiple domains (edge case).
- * @param address Address to resolve (e.g. `5GgzS1G34d2wRxtVBnSkA8GQBj4ySnGqQb34ix2ULwVzKdWQ`)
+ * @param address Address to resolve (e.g. `5EFJEY4DG2FnzcuCZpnRjjzT4x7heeEXuoYy1yAoUmshEhAP`)
  * @param options Options (see `ResolveOptions` definition)
  * @returns Array of primary domains (e.g. `[]` or `['domains.azero', 'domains.other']`)
  */
