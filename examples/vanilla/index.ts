@@ -11,22 +11,24 @@ const result_1 = document.querySelector<HTMLDivElement>('#result-1')
 if (chain_select && input_router_address && input_1 && button_1 && result_1) {
   button_1.addEventListener('click', async () => {
     const domain = input_1.value
-    try {
-      const chainId = chain_select.value
-      const customRouterAddress = input_router_address.value
-      const customContractAddresses = {
-        [ContractId.Router]: customRouterAddress,
-      }
-      const address = await resolveDomainToAddress(domain, {
-        debug: true,
-        chainId,
-        ...(customRouterAddress && { customContractAddresses }),
-      })
+    const chainId = chain_select.value
+    const customRouterAddress = input_router_address.value
+    const customContractAddresses = {
+      [ContractId.Router]: customRouterAddress,
+    }
+
+    const { address, error } = await resolveDomainToAddress(domain, {
+      debug: true,
+      chainId,
+      ...(customRouterAddress && { customContractAddresses }),
+    })
+
+    if (error) {
+      result_1.innerHTML = `<span style="color:red;">${error.message}</span>`
+    } else {
       result_1.innerHTML = address
         ? `<span style="color:#E6FD3A;">${address}</span>`
         : 'No address found'
-    } catch (error: any) {
-      result_1.innerHTML = `<span style="color:red;">${error}</span>`
     }
   })
 }
@@ -38,22 +40,24 @@ const result_2 = document.querySelector<HTMLDivElement>('#result-2')
 if (chain_select && input_router_address && input_2 && button_2 && result_2) {
   button_2.addEventListener('click', async () => {
     const address = input_2.value
-    try {
-      const chainId = chain_select.value
-      const customRouterAddress = input_router_address.value
-      const customContractAddresses = {
-        [ContractId.Router]: customRouterAddress,
-      }
-      const primaryDomains = await resolveAddressToDomain(address, {
-        debug: true,
-        chainId,
-        ...(customRouterAddress && { customContractAddresses }),
-      })
-      result_2.innerHTML = primaryDomains?.length
-        ? `<span style="color:#E6FD3A;">${primaryDomains}</span>`
+    const chainId = chain_select.value
+    const customRouterAddress = input_router_address.value
+    const customContractAddresses = {
+      [ContractId.Router]: customRouterAddress,
+    }
+
+    const { primaryDomain, error } = await resolveAddressToDomain(address, {
+      debug: true,
+      chainId,
+      ...(customRouterAddress && { customContractAddresses }),
+    })
+
+    if (error) {
+      result_2.innerHTML = `<span style="color:red;">${error.message}</span>`
+    } else {
+      result_2.innerHTML = primaryDomain
+        ? `<span style="color:#E6FD3A;">${primaryDomain}</span>`
         : 'No primary domain found'
-    } catch (error: any) {
-      result_2.innerHTML = `<span style="color:red;">${error}</span>`
     }
   })
 }

@@ -17,14 +17,14 @@
     "examples/*"
   ],
   "scripts": {
-    "dev": "pnpm -r -F './packages/**' dev",
-    "dev:examples": "pnpm run build && pnpm -r -F './examples/**' dev",
-    "build": "pnpm -F './packages/resolver-core' build && pnpm -F './packages/resolver-react' build",
+    "dev": "pnpm -r -F \"{packages/**}\" dev",
+    "dev:examples": "pnpm run build && pnpm -r -F \"{examples/**}\" dev",
+    "build": "pnpm -F \"{packages/resolver-core}\" build && pnpm -F \"{packages/resolver-react}\" build",
     "changeset:version": "changeset version && pnpm install --lockfile-only",
     "changeset:publish": "pnpm build && changeset publish",
-    "lint": "pnpm -F '@azns/resolver-core' lint",
-    "lint:fix": "pnpm -F '@azns/resolver-core' lint:fix",
-    "lint:format": "pnpm -F '@azns/resolver-core' lint:format",
+    "lint": "pnpm -F \"{packages/resolver-core}\" lint",
+    "lint:fix": "pnpm -F \"{packages/resolver-core}\" lint:fix",
+    "lint:format": "pnpm -F \"{packages/resolver-core}\" lint:format",
     "typedoc": "typedoc --options typedoc.json"
   },
   "simple-git-hooks": {

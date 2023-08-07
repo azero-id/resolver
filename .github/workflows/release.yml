@@ -36,8 +36,8 @@ jobs:
         id: changesets
         uses: changesets/action@v1.4.1
         with:
-          title: 'chore: version packages'
-          commit: 'chore: version packages'
+          title: 'chore(changeset): Bump package version'
+          commit: 'chore(changeset): Bump package version'
           version: pnpm changeset:version
           publish: pnpm changeset:publish
         env:
