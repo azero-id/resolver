@@ -50,9 +50,13 @@ Resolve domain → address via [`resolveDomainToAddress`](https://azero-id.githu
 ```ts
 import { SupportedChainId, resolveDomainToAddress } from '@azns/resolver-core'
 
-const address = await resolveDomainToAddress('domains.tzero', {
+const { address, error } = await resolveDomainToAddress('domains.tzero', {
   chainId: SupportedChainId.AlephZeroTestnet,
 })
+
+// Print result
+if (error) console.log(error.message)
+else console.log(address)
 ```
 
 Resolve address → primary domain(s) via [`resolveAddressToDomain`](https://azero-id.github.io/resolver/functions/_azns_resolver_core.resolveAddressToDomain.html):
@@ -60,12 +64,16 @@ Resolve address → primary domain(s) via [`resolveAddressToDomain`](https://aze
 ```ts
 import { SupportedChainId, resolveAddressToDomain } from '@azns/resolver-core'
 
-const primaryDomains = await resolveAddressToDomain(
+const { primaryDomain, error } = await resolveAddressToDomain(
   '5EeBxqQ7Kz6hcchEgkBn9ybBS4UaqGggi2Rq5weNyEZ9DjAK',
   {
     chainId: SupportedChainId.AlephZeroTestnet,
   },
 )
+
+// Print result
+if (error) console.log(error.message)
+else console.log(primaryDomain)
 ```
 
 ### React/Next.js Hooks
@@ -86,7 +94,7 @@ Resolve domain → address via [`useResolveDomainToAddress`](https://azero-id.gi
 import { SupportedChainId } from '@azns/resolver-core'
 import { useResolveDomainToAddress } from '@azns/resolver-react'
 
-const { address } = useResolveDomainToAddress('domains.tzero', {
+const { address, error } = useResolveDomainToAddress('domains.tzero', {
   chainId: SupportedChainId.AlephZeroTestnet,
 })
 ```
@@ -97,7 +105,7 @@ Resolve address → primary domain(s) via [`useResolveAddressToDomain`](https://
 import { SupportedChainId } from '@azns/resolver-core'
 import { useResolveAddressToDomain } from '@azns/resolver-react'
 
-const { primaryDomain } = useResolveAddressToDomain(
+const { primaryDomain, error } = useResolveAddressToDomain(
   '5EeBxqQ7Kz6hcchEgkBn9ybBS4UaqGggi2Rq5weNyEZ9DjAK',
   {
     chainId: SupportedChainId.AlephZeroTestnet,
