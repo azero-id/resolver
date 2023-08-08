@@ -1,5 +1,11 @@
 # @azns/resolver-react
 
+## 1.1.1
+
+### Patch Changes
+
+- [`3cc6ec0`](https://github.com/azero-id/resolver/commit/3cc6ec0283283ac16b2fd773b4e1e34224a85f42) Thanks [@wottpal](https://github.com/wottpal)! - Add back `@azns/resolver-core` as `peerDependency`.
+
 ## 1.1.0
 
 ### Patch Changes
