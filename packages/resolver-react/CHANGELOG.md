@@ -1,5 +1,12 @@
 # @azns/resolver-react
 
+## 1.1.0
+
+### Patch Changes
+
+- Updated dependencies [[`4beafea`](https://github.com/azero-id/resolver/commit/4beafea400fd76d284755d9ba698f9c6cbb899e1)]:
+  - @azns/resolver-core@1.1.0
+
 ## 1.0.0
 
 ### Minor Changes

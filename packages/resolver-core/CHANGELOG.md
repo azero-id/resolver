@@ -1,5 +1,11 @@
 # @azns/resolver-core
 
+## 1.1.0
+
+### Minor Changes
+
+- [`4beafea`](https://github.com/azero-id/resolver/commit/4beafea400fd76d284755d9ba698f9c6cbb899e1) Thanks [@wottpal](https://github.com/wottpal)! - When resolving an address, check its format beforehand and add custom error `INVALID_ADDRESS_FORMAT` for invalid SS58 address formats.
+
 ## 1.0.0
 
 ### Major Changes
