@@ -7,8 +7,5 @@
   "fixed": [],
   "linked": [["@azns/resolver-*"]],
   "updateInternalDependencies": "patch",
-  "ignore": ["vanilla-example", "next-example"],
-  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
-    "onlyUpdatePeerDependentsWhenOutOfRange": true
-  }
+  "ignore": ["vanilla-example", "next-example"]
 }
