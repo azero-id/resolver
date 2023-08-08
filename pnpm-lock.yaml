@@ -115,6 +115,9 @@ importers:
       '@polkadot/util':
         specifier: '>=11.1.3'
         version: 11.1.3
+      '@polkadot/util-crypto':
+        specifier: '>=11.1.3'
+        version: 11.1.3(@polkadot/util@11.1.3)
       bufferutil:
         specifier: '>=4.0.1'
         version: 4.0.1
@@ -1028,7 +1031,7 @@ packages:
       '@polkadot/types-augment': 10.0.1
       '@polkadot/types-codec': 10.0.1
       '@polkadot/util': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1043,7 +1046,7 @@ packages:
       '@polkadot/types': 10.0.1
       '@polkadot/util': 11.1.3
       rxjs: 7.8.0
-      tslib: 2.5.0
+      tslib: 2.6.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1081,7 +1084,7 @@ packages:
       '@polkadot/util': 11.1.3
       '@polkadot/util-crypto': 11.1.3(@polkadot/util@11.1.3)
       rxjs: 7.8.0
-      tslib: 2.5.0
+      tslib: 2.6.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1124,7 +1127,7 @@ packages:
     dependencies:
       '@polkadot/util': 11.1.3
       '@polkadot/util-crypto': 11.1.3(@polkadot/util@11.1.3)
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/networks@11.1.3:
@@ -1133,7 +1136,7 @@ packages:
     dependencies:
       '@polkadot/util': 11.1.3
       '@substrate/ss58-registry': 1.39.0
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/rpc-augment@10.0.1(bufferutil@4.0.1)(utf-8-validate@6.0.0):
@@ -1144,7 +1147,7 @@ packages:
       '@polkadot/types': 10.0.1
       '@polkadot/types-codec': 10.0.1
       '@polkadot/util': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1160,7 +1163,7 @@ packages:
       '@polkadot/types': 10.0.1
       '@polkadot/util': 11.1.3
       rxjs: 7.8.0
-      tslib: 2.5.0
+      tslib: 2.6.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1182,7 +1185,7 @@ packages:
       eventemitter3: 5.0.0
       mock-socket: 9.2.1
       nock: 13.3.0
-      tslib: 2.5.0
+      tslib: 2.6.1
     optionalDependencies:
       '@substrate/connect': 0.7.20(bufferutil@4.0.1)(utf-8-validate@6.0.0)
     transitivePeerDependencies:
@@ -1198,7 +1201,7 @@ packages:
       '@polkadot/types': 10.0.1
       '@polkadot/types-codec': 10.0.1
       '@polkadot/util': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/types-codec@10.0.1:
@@ -1207,7 +1210,7 @@ packages:
     dependencies:
       '@polkadot/util': 11.1.3
       '@polkadot/x-bigint': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/types-create@10.0.1:
@@ -1216,7 +1219,7 @@ packages:
     dependencies:
       '@polkadot/types-codec': 10.0.1
       '@polkadot/util': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/types-known@10.0.1:
@@ -1228,7 +1231,7 @@ packages:
       '@polkadot/types-codec': 10.0.1
       '@polkadot/types-create': 10.0.1
       '@polkadot/util': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/types-support@10.0.1:
@@ -1236,7 +1239,7 @@ packages:
     engines: {node: '>=14.0.0'}
     dependencies:
       '@polkadot/util': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/types@10.0.1:
@@ -1267,7 +1270,7 @@ packages:
       '@polkadot/x-bigint': 11.1.3
       '@polkadot/x-randomvalues': 11.1.3
       '@scure/base': 1.1.1
-      tslib: 2.5.0
+      tslib: 2.6.1
       tweetnacl: 1.0.3
     dev: false
 
@@ -1294,7 +1297,7 @@ packages:
       '@polkadot/util': 11.1.3
       '@polkadot/wasm-util': 7.1.1(@polkadot/util@11.1.3)
       '@polkadot/x-randomvalues': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/wasm-crypto-asmjs@7.1.1(@polkadot/util@11.1.3):
@@ -1304,7 +1307,7 @@ packages:
       '@polkadot/util': '*'
     dependencies:
       '@polkadot/util': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/wasm-crypto-init@7.1.1(@polkadot/util@11.1.3)(@polkadot/x-randomvalues@11.1.3):
@@ -1320,7 +1323,7 @@ packages:
       '@polkadot/wasm-crypto-wasm': 7.1.1(@polkadot/util@11.1.3)
       '@polkadot/wasm-util': 7.1.1(@polkadot/util@11.1.3)
       '@polkadot/x-randomvalues': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/wasm-crypto-wasm@7.1.1(@polkadot/util@11.1.3):
@@ -1331,7 +1334,7 @@ packages:
     dependencies:
       '@polkadot/util': 11.1.3
       '@polkadot/wasm-util': 7.1.1(@polkadot/util@11.1.3)
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/wasm-crypto@7.1.1(@polkadot/util@11.1.3)(@polkadot/x-randomvalues@11.1.3):
@@ -1348,7 +1351,7 @@ packages:
       '@polkadot/wasm-crypto-wasm': 7.1.1(@polkadot/util@11.1.3)
       '@polkadot/wasm-util': 7.1.1(@polkadot/util@11.1.3)
       '@polkadot/x-randomvalues': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/wasm-util@7.1.1(@polkadot/util@11.1.3):
@@ -1358,7 +1361,7 @@ packages:
       '@polkadot/util': '*'
     dependencies:
       '@polkadot/util': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/x-bigint@11.1.3:
@@ -1366,7 +1369,7 @@ packages:
     engines: {node: '>=14'}
     dependencies:
       '@polkadot/x-global': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/x-fetch@11.1.3:
@@ -1375,7 +1378,7 @@ packages:
     dependencies:
       '@polkadot/x-global': 11.1.3
       node-fetch: 3.3.1
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/x-global@11.1.3:
@@ -1390,7 +1393,7 @@ packages:
     engines: {node: '>=14'}
     dependencies:
       '@polkadot/x-global': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: false
 
   /@polkadot/x-textdecoder@11.1.3:
@@ -1414,7 +1417,7 @@ packages:
     engines: {node: '>=14'}
     dependencies:
       '@polkadot/x-global': 11.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
       ws: 8.13.0(bufferutil@4.0.1)(utf-8-validate@6.0.0)
     transitivePeerDependencies:
       - bufferutil
@@ -1431,6 +1434,7 @@ packages:
 
   /@substrate/connect-extension-protocol@1.0.1:
     resolution: {integrity: sha512-161JhCC1csjH3GE5mPLEd7HbWtwNSPJBg3p1Ksz9SFlTzj/bgEwudiRN2y5i0MoLGCIJRYKyKGMxVnd29PzNjg==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -2762,6 +2766,7 @@ packages:
 
   /eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -4046,6 +4051,7 @@ packages:
 
   /pako@2.1.0:
     resolution: {integrity: sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -4493,7 +4499,7 @@ packages:
   /rxjs@7.8.0:
     resolution: {integrity: sha512-F2+gxDshqmIub1KdvZkaEfGDwLNpPvk9Fs6LD/MyQxNgMds/WH9OdDDXOmxUZpME+iSK3rQCctkL0DYyytUqMg==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.6.1
 
   /safe-regex-test@1.0.0:
     resolution: {integrity: sha512-JBUUzyOgEwXQY1NuPtvcj/qcBDbDmEvWufhlnXZIm75DEHp+afM1r1ujJpJsV/gSM4t59tpDyPi1sd6ZaPFfsA==}
@@ -4640,6 +4646,7 @@ packages:
 
   /smoldot@0.7.11(bufferutil@4.0.1)(utf-8-validate@6.0.0):
     resolution: {integrity: sha512-aE1led154FJ2/jrXKv2HLKdNIyvYJG6H2ZmKYFS++kW1OAcTQ6idDy3fzAI1VdydLDYK0YbKUsj7SJDmrjsS3g==}
+    requiresBuild: true
     dependencies:
       pako: 2.1.0
       ws: 8.13.0(bufferutil@4.0.1)(utf-8-validate@6.0.0)
@@ -4983,7 +4990,6 @@ packages:
 
   /tslib@2.6.1:
     resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==}
-    dev: false
 
   /tsup@6.7.0(typescript@5.1.6):
     resolution: {integrity: sha512-L3o8hGkaHnu5TdJns+mCqFsDBo83bJ44rlK7e6VdanIvpea4ArPcU3swWGsLVbXak1PqQx/V+SSmFPujBK+zEQ==}

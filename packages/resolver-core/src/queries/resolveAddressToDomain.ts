@@ -1,3 +1,4 @@
+import { checkAddress } from '@polkadot/util-crypto'
 import log from 'loglevel'
 import { ContractId, SupportedChainId } from '../constants'
 import { getContract } from '../deployments'
@@ -45,11 +46,25 @@ export const resolveAddressToDomain = async (
       _o.customContractAddresses,
     )
 
+    // Check if address format is valid
+    const prefix = api.registry.chainSS58 || 42
+    const _address = (address || '').trim()
+    const isValid = checkAddress(_address, prefix)[0]
+    if (!isValid)
+      return {
+        primaryDomain: undefined,
+        allPrimaryDomains: undefined,
+        error: new ResolveAddressError({
+          name: 'INVALID_ADDRESS_FORMAT',
+          message: `Address must have valid SS58 format (prefix ${prefix})`,
+        }),
+      }
+
     // Query contract
     const response = await routerContract.query.getPrimaryDomains(
       '',
       { gasLimit: getMaxGasLimit(api) },
-      address,
+      _address,
       null,
     )
 
@@ -60,7 +75,7 @@ export const resolveAddressToDomain = async (
       'get_primary_domains',
     )
     if (isError) {
-      const message = `Contract error while resolving address '${address}': ${decodedOutput}`
+      const message = `Contract error while resolving address '${_address}': ${decodedOutput}`
       log.error(message)
       return {
         primaryDomain: undefined,
@@ -79,8 +94,8 @@ export const resolveAddressToDomain = async (
 
     log.debug(
       primaryDomain
-        ? `Resolved primary domain for address '${address}': ${primaryDomain}`
-        : `No primary domain found for address '${address}'`,
+        ? `Resolved primary domain for address '${_address}': ${primaryDomain}`
+        : `No primary domain found for address '${_address}'`,
     )
     return { primaryDomain, allPrimaryDomains, error: undefined }
   } catch (error) {

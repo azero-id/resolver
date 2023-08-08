@@ -5,8 +5,7 @@
   "access": "public",
   "baseBranch": "main",
   "fixed": [],
-  "linked": [],
-  "updateInternalDependencies": "minor",
-  "bumpVersionsWithWorkspaceProtocolOnly": true,
+  "linked": [["@azns/resolver-*"]],
+  "updateInternalDependencies": "patch",
   "ignore": ["vanilla-example", "next-example"]
 }
