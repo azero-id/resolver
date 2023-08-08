@@ -1,5 +1,15 @@
 # @azns/resolver-core
 
+## 2.0.0
+
+### Major Changes
+
+- [#16](https://github.com/azero-id/resolver/pull/16) [`8bdcdfe`](https://github.com/azero-id/resolver/commit/8bdcdfe59c9d34862cab81ce0e6eaf05c442df04) Thanks [@wottpal](https://github.com/wottpal)! - Release 1.0.0 as `changeset` incorrectly released @azns/resolver-react@1.0.0 to first major release.
+
+### Minor Changes
+
+- [#18](https://github.com/azero-id/resolver/pull/18) [`e02108e`](https://github.com/azero-id/resolver/commit/e02108e033005ddd28162e931172598951d9aa34) Thanks [@azero-id-bot](https://github.com/azero-id-bot)! - When resolving an address, check its format beforehand and add custom error `INVALID_ADDRESS_FORMAT` for invalid SS58 address formats.
+
 ## 1.0.0
 
 ### Major Changes
