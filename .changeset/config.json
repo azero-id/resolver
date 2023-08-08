@@ -5,7 +5,7 @@
   "access": "public",
   "baseBranch": "main",
   "fixed": [],
-  "linked": [],
+  "linked": [["@azns/resolver-*"]],
   "updateInternalDependencies": "patch",
   "ignore": ["vanilla-example", "next-example"]
 }
