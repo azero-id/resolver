@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines": {
+    "node": ">=16 <=18",
+    "pnpm": "8"
+  },
   "dependencies": {
     "@azns/resolver-core": "workspace:*",
     "@azns/resolver-react": "workspace:*",
-    "@types/react": "^18.2.18",
+    "@types/react": "^18.2.19",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
     "next": "^13.4.13",

@@ -11,6 +11,7 @@ let _chain: Chain | undefined = undefined
  * Helper to initialize & cache `@polkadot/api`.
  */
 export const getApi = async (chainId: SupportedChainId, options?: ApiOptions) => {
+  // Return cached object if possible
   if (_api && _chain?.network === chainId) {
     return _api
   }

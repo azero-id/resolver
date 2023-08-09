@@ -40,11 +40,11 @@
     "react": ">=18",
     "react-dom": ">=18"
   },
-  "dependency": {
+  "dependencies": {
     "@azns/resolver-core": "workspace:*"
   },
   "devDependencies": {
-    "@types/react": "^18.2.18"
+    "@types/react": "^18.2.19"
   },
   "keywords": [
     "azero",
