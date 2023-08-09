@@ -1,5 +1,13 @@
 # @azns/resolver-core
 
+## 1.2.0
+
+### Minor Changes
+
+- [#33](https://github.com/azero-id/resolver/pull/33) [`6c5c1d1`](https://github.com/azero-id/resolver/commit/6c5c1d1801295a7e3e36b87db08ec35d3b4298f1) Thanks [@wottpal](https://github.com/wottpal)! - Adds domain sanitization to `resolveDomainToAddress` which means, by default, domains get trimmed & lowercased before resolving now. The behavior can be disabled by passing `skipSanitization: true`. Also, the `sanitizeDomain` utility function was added and gets exported separately.
+
+- [#34](https://github.com/azero-id/resolver/pull/34) [`e672363`](https://github.com/azero-id/resolver/commit/e6723631a398d45bb8be0e72b793406cb724491d) Thanks [@wottpal](https://github.com/wottpal)! - Cache `ContractPromise` object for `azns_router` contract via new `getRouterContract` helper.
+
 ## 1.1.0
 
 ### Minor Changes

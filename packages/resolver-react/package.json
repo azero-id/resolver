@@ -1,7 +1,7 @@
 {
   "name": "@azns/resolver-react",
   "author": "AZERO.ID <hello@azero.id> (https://azero.id)",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "React Hooks Library for resolving Domains issued by AZERO.ID",
   "homepage": "https://azero.id",
   "type": "module",
