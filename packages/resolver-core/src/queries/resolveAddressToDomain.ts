@@ -1,11 +1,11 @@
 import { checkAddress } from '@polkadot/util-crypto'
 import log from 'loglevel'
-import { ContractId, SupportedChainId } from '../constants'
-import { getContract } from '../deployments'
+import { SupportedChainId } from '../constants'
 import { ErrorBase } from '../helpers/ErrorBase'
 import { decodeOutput } from '../helpers/decodeOutput'
 import { getApi } from '../helpers/getApi'
 import { getMaxGasLimit } from '../helpers/getGasLimit'
+import { getRouterContract } from '../helpers/getRouterContract'
 import { ResolveOptions } from '../types'
 
 export type ResolveAddressErrorName = 'INVALID_ADDRESS_FORMAT' | 'CONTRACT_ERROR' | 'OTHER_ERROR'
@@ -39,12 +39,7 @@ export const resolveAddressToDomain = async (
 
     // Initialize API & contract
     const api = _o?.customApi || (await getApi(_o.chainId))
-    const { contract: routerContract } = await getContract(
-      api,
-      _o.chainId,
-      ContractId.Router,
-      _o.customContractAddresses,
-    )
+    const routerContract = await getRouterContract(api, _o.chainId, _o.customContractAddresses)
 
     // Check if address format is valid
     const prefix = api.registry.chainSS58 || 42
@@ -75,7 +70,9 @@ export const resolveAddressToDomain = async (
       'get_primary_domains',
     )
     if (isError) {
-      const message = `Contract error while resolving address '${_address}': ${decodedOutput}`
+      const message = decodedOutput
+        ? `Contract error while resolving address '${_address}': ${decodedOutput}`
+        : `Contract failed while resolving address '${_address}' without error message`
       log.error(message)
       return {
         primaryDomain: undefined,

@@ -1,11 +1,13 @@
 import log from 'loglevel'
-import { ContractId, SupportedChainId, SupportedTLD } from '../constants'
-import { getContract, getSupportedTLDs } from '../deployments'
+import { SupportedChainId, SupportedTLD } from '../constants'
+import { getSupportedTLDs } from '../deployments'
 import { ErrorBase } from '../helpers/ErrorBase'
 import { decodeOutput } from '../helpers/decodeOutput'
 import { getApi } from '../helpers/getApi'
 import { getMaxGasLimit } from '../helpers/getGasLimit'
+import { getRouterContract } from '../helpers/getRouterContract'
 import { ResolveOptions } from '../types'
+import { sanitizeDomain } from '../utils/sanitizeDomain'
 
 export type ResolveDomainErrorName =
   | 'UNSUPPORTED_TLD'
@@ -15,20 +17,27 @@ export type ResolveDomainErrorName =
 export class ResolveDomainError extends ErrorBase<ResolveDomainErrorName> {}
 
 /**
+ * @param skipSanitization Uses the exact given domain w/o sanitization like lowercasing (default: false)
+ */
+export type ResolveDomainOptions = ResolveOptions & {
+  skipSanitization?: boolean
+}
+
+/**
  * Resolves a given domain to the assigned address.
  * @param domain Domain to resolve (e.g. `domains.azero`)
- * @param options Options (see `ResolveOptions` definition)
+ * @param options Options (see `ResolveDomainOptions` definition)
  * @returns Address as string (null, if domain not found) or error
  */
 export const resolveDomainToAddress = async (
   domain: string,
-  options?: Partial<ResolveOptions>,
+  options?: Partial<ResolveDomainOptions>,
 ): Promise<
   { address: string | null; error: undefined } | { address: undefined; error: ResolveDomainError }
 > => {
   try {
     // Merge default options
-    const _o: ResolveOptions = Object.assign(
+    const _o: ResolveDomainOptions = Object.assign(
       {
         chainId: SupportedChainId.AlephZero,
       },
@@ -36,9 +45,11 @@ export const resolveDomainToAddress = async (
     )
     log.setLevel(_o.debug ? 'DEBUG' : 'WARN')
 
-    // Check if domain format is valid
-    const tld = domain.split('.').pop()
-    if (domain.split('.').length < 2 || !tld)
+    // Sanitize domain & Check if format is valid
+    const _domain = _o.skipSanitization ? domain : sanitizeDomain(domain)
+    const regex = new RegExp(`^(?:([^.]+)\\.)([^.]+)$`)
+    const regexResult = regex.exec(_domain)
+    if (!regexResult || regexResult.length !== 3) {
       return {
         address: undefined,
         error: new ResolveDomainError({
@@ -46,8 +57,10 @@ export const resolveDomainToAddress = async (
           message: `Domain must be in format 'name.tld'`,
         }),
       }
+    }
 
     // Check if TLD is supported
+    const [, , tld] = regexResult
     const supportedTLDs = getSupportedTLDs(_o.chainId)
     if (!supportedTLDs.includes(tld as SupportedTLD) && _o.chainId !== SupportedChainId.Development)
       return {
@@ -60,23 +73,20 @@ export const resolveDomainToAddress = async (
 
     // Initialize API & contract
     const api = _o?.customApi || (await getApi(_o.chainId))
-    const { contract: routerContract } = await getContract(
-      api,
-      _o.chainId,
-      ContractId.Router,
-      _o.customContractAddresses,
-    )
+    const routerContract = await getRouterContract(api, _o.chainId, _o.customContractAddresses)
 
     // Query contract
     const response = await routerContract.query.getAddress(
       '',
       { gasLimit: getMaxGasLimit(api) },
-      domain,
+      _domain,
     )
     const { output, isError, decodedOutput } = decodeOutput(response, routerContract, 'get_address')
     let address: string | null = null
     if (isError && decodedOutput !== 'CouldNotResolveDomain') {
-      const message = `Contract error while resolving domain '${domain}': ${decodedOutput}`
+      const message = decodedOutput
+        ? `Contract error while resolving domain '${_domain}': ${decodedOutput}`
+        : `Contract failed while resolving domain '${_domain}' without error message`
       log.error(message)
       return {
         address: undefined,
@@ -92,8 +102,8 @@ export const resolveDomainToAddress = async (
 
     log.debug(
       address
-        ? `Resolved address for domain '${domain}': ${address}`
-        : `Domain '${domain}' not found`,
+        ? `Resolved address for domain '${_domain}': ${address}`
+        : `Domain '${_domain}' not found`,
     )
     return { address, error: undefined }
   } catch (error) {
