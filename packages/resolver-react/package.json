@@ -37,9 +37,11 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@azns/resolver-core": "workspace:*",
     "react": ">=18",
     "react-dom": ">=18"
+  },
+  "dependency": {
+    "@azns/resolver-core": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.18"
