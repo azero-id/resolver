@@ -8,6 +8,10 @@
     "build": "tsc && vite build",
     "start": "vite preview"
   },
+  "engines": {
+    "node": ">=16 <=18",
+    "pnpm": "8"
+  },
   "dependencies": {
     "@azns/resolver-core": "workspace:*"
   },
