@@ -1,5 +1,12 @@
 # @azns/resolver-react
 
+## 1.2.0
+
+### Patch Changes
+
+- Updated dependencies [[`6c5c1d1`](https://github.com/azero-id/resolver/commit/6c5c1d1801295a7e3e36b87db08ec35d3b4298f1), [`e672363`](https://github.com/azero-id/resolver/commit/e6723631a398d45bb8be0e72b793406cb724491d)]:
+  - @azns/resolver-core@1.2.0
+
 ## 1.1.0
 
 ### Patch Changes
