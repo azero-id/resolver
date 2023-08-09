@@ -1,10 +1,11 @@
 import log from 'loglevel'
-import { ContractId, SupportedChainId, SupportedTLD } from '../constants'
-import { getContract, getSupportedTLDs } from '../deployments'
+import { SupportedChainId, SupportedTLD } from '../constants'
+import { getSupportedTLDs } from '../deployments'
 import { ErrorBase } from '../helpers/ErrorBase'
 import { decodeOutput } from '../helpers/decodeOutput'
 import { getApi } from '../helpers/getApi'
 import { getMaxGasLimit } from '../helpers/getGasLimit'
+import { getRouterContract } from '../helpers/getRouterContract'
 import { ResolveOptions } from '../types'
 import { sanitizeDomain } from '../utils/sanitizeDomain'
 
@@ -72,12 +73,7 @@ export const resolveDomainToAddress = async (
 
     // Initialize API & contract
     const api = _o?.customApi || (await getApi(_o.chainId))
-    const { contract: routerContract } = await getContract(
-      api,
-      _o.chainId,
-      ContractId.Router,
-      _o.customContractAddresses,
-    )
+    const routerContract = await getRouterContract(api, _o.chainId, _o.customContractAddresses)
 
     // Query contract
     const response = await routerContract.query.getAddress(
@@ -88,7 +84,9 @@ export const resolveDomainToAddress = async (
     const { output, isError, decodedOutput } = decodeOutput(response, routerContract, 'get_address')
     let address: string | null = null
     if (isError && decodedOutput !== 'CouldNotResolveDomain') {
-      const message = `Contract error while resolving domain '${_domain}': ${decodedOutput}`
+      const message = decodedOutput
+        ? `Contract error while resolving domain '${_domain}': ${decodedOutput}`
+        : `Contract failed while resolving domain '${_domain}' without error message`
       log.error(message)
       return {
         address: undefined,
