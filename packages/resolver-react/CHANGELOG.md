@@ -1,5 +1,16 @@
 # @azns/resolver-react
 
+## 1.3.0
+
+### Minor Changes
+
+- [#37](https://github.com/azero-id/resolver/pull/37) [`bbcf22e`](https://github.com/azero-id/resolver/commit/bbcf22e4a28d92f7595b33993a4cded5c43bd547) Thanks [@wottpal](https://github.com/wottpal)! - Add optional `ignoreAddressPrefix` option when resolving addresses to domains for automatically converting any valid ss58 address and not strictly assuming the current chains prefix (42).
+
+### Patch Changes
+
+- Updated dependencies [[`bbcf22e`](https://github.com/azero-id/resolver/commit/bbcf22e4a28d92f7595b33993a4cded5c43bd547)]:
+  - @azns/resolver-core@1.3.0
+
 ## 1.2.0
 
 ### Patch Changes
