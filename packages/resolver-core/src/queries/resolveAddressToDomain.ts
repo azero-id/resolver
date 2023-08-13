@@ -1,4 +1,5 @@
-import { checkAddress } from '@polkadot/util-crypto'
+import { hexToU8a, isHex } from '@polkadot/util'
+import { checkAddress, decodeAddress, encodeAddress } from '@polkadot/util-crypto'
 import log from 'loglevel'
 import { SupportedChainId } from '../constants'
 import { ErrorBase } from '../helpers/ErrorBase'
@@ -6,10 +7,17 @@ import { decodeOutput } from '../helpers/decodeOutput'
 import { getApi } from '../helpers/getApi'
 import { getMaxGasLimit } from '../helpers/getGasLimit'
 import { getRouterContract } from '../helpers/getRouterContract'
-import { ResolveOptions } from '../types'
+import { BaseResolveOptions } from '../types'
 
 export type ResolveAddressErrorName = 'INVALID_ADDRESS_FORMAT' | 'CONTRACT_ERROR' | 'OTHER_ERROR'
 export class ResolveAddressError extends ErrorBase<ResolveAddressErrorName> {}
+
+/**
+ * @param ignoreAddressPrefix If true, the current chain ss58 prefix will be ignored and the address will be decoded with any prefix
+ */
+export type ResolveAddressOptions = BaseResolveOptions & {
+  ignoreAddressPrefix?: boolean
+}
 
 /**
  * Resolves a given address to the assigned primary domain(s).
@@ -22,14 +30,14 @@ export class ResolveAddressError extends ErrorBase<ResolveAddressErrorName> {}
  */
 export const resolveAddressToDomain = async (
   address: string,
-  options?: Partial<ResolveOptions>,
+  options?: Partial<ResolveAddressOptions>,
 ): Promise<
   | { primaryDomain: string | null; allPrimaryDomains: string[]; error: undefined }
   | { primaryDomain: undefined; allPrimaryDomains: undefined; error: ResolveAddressError }
 > => {
   try {
     // Merge default options
-    const _o: ResolveOptions = Object.assign(
+    const _o: ResolveAddressOptions = Object.assign(
       {
         chainId: SupportedChainId.AlephZero,
       },
@@ -41,19 +49,31 @@ export const resolveAddressToDomain = async (
     const api = _o?.customApi || (await getApi(_o.chainId))
     const routerContract = await getRouterContract(api, _o.chainId, _o.customContractAddresses)
 
-    // Check if address format is valid
+    // Check address validity and convert if necessary
+    let _address = (address || '').trim()
     const prefix = api.registry.chainSS58 || 42
-    const _address = (address || '').trim()
-    const isValid = checkAddress(_address, prefix)[0]
-    if (!isValid)
+    try {
+      if (!_o.ignoreAddressPrefix) {
+        // Strictly check validity with chain prefix
+        const isValid = checkAddress(_address, prefix)[0]
+        if (!isValid) throw new Error()
+      } else {
+        // Try to decode address with any prefix (and encode with chain prefix)
+        _address = encodeAddress(
+          isHex(address) ? hexToU8a(address) : decodeAddress(address),
+          prefix,
+        )
+      }
+    } catch (_) {
       return {
         primaryDomain: undefined,
         allPrimaryDomains: undefined,
         error: new ResolveAddressError({
           name: 'INVALID_ADDRESS_FORMAT',
-          message: `Address must have valid SS58 format (prefix ${prefix})`,
+          message: `Address must have valid SS58 format`,
         }),
       }
+    }
 
     // Query contract
     const response = await routerContract.query.getPrimaryDomains(

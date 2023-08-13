@@ -1,4 +1,8 @@
-import { ResolveAddressError, ResolveOptions, resolveAddressToDomain } from '@azns/resolver-core'
+import {
+  ResolveAddressError,
+  ResolveAddressOptions,
+  resolveAddressToDomain,
+} from '@azns/resolver-core'
 import { useEffect, useState } from 'react'
 
 /**
@@ -7,7 +11,7 @@ import { useEffect, useState } from 'react'
  */
 export const useResolveAddressToDomain = (
   address: string | undefined,
-  options?: Partial<ResolveOptions>,
+  options?: Partial<ResolveAddressOptions>,
 ) => {
   const [primaryDomain, setPrimaryDomain] = useState<string | null | undefined>()
   const [allPrimaryDomains, setAllPrimaryDomains] = useState<string[] | undefined>()
