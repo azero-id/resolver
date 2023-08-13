@@ -16,7 +16,7 @@ export type Chain = {
  * @param customContractAddresses Custom contract addresses to overwrite the default ones. Mandatory for `development` network.
  * @param debug Enable debug logging.
  */
-export type ResolveOptions = {
+export type BaseResolveOptions = {
   chainId: SupportedChainIds
   customApi?: ApiPromise
   customContractAddresses?: ContractAddresses

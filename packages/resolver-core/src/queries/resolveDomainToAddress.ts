@@ -6,7 +6,7 @@ import { decodeOutput } from '../helpers/decodeOutput'
 import { getApi } from '../helpers/getApi'
 import { getMaxGasLimit } from '../helpers/getGasLimit'
 import { getRouterContract } from '../helpers/getRouterContract'
-import { ResolveOptions } from '../types'
+import { BaseResolveOptions } from '../types'
 import { sanitizeDomain } from '../utils/sanitizeDomain'
 
 export type ResolveDomainErrorName =
@@ -19,7 +19,7 @@ export class ResolveDomainError extends ErrorBase<ResolveDomainErrorName> {}
 /**
  * @param skipSanitization Uses the exact given domain w/o sanitization like lowercasing (default: false)
  */
-export type ResolveDomainOptions = ResolveOptions & {
+export type ResolveDomainOptions = BaseResolveOptions & {
   skipSanitization?: boolean
 }
 
