@@ -1,7 +1,7 @@
 import { hexToU8a, isHex } from '@polkadot/util'
 import { checkAddress, decodeAddress, encodeAddress } from '@polkadot/util-crypto'
 import log from 'loglevel'
-import { SupportedChainId } from '../constants'
+import { SupportedChainId, allSupportedChainIds } from '../constants'
 import { ErrorBase } from '../helpers/ErrorBase'
 import { decodeOutput } from '../helpers/decodeOutput'
 import { getApi } from '../helpers/getApi'
@@ -9,7 +9,11 @@ import { getMaxGasLimit } from '../helpers/getGasLimit'
 import { getRouterContract } from '../helpers/getRouterContract'
 import { BaseResolveOptions } from '../types'
 
-export type ResolveAddressErrorName = 'INVALID_ADDRESS_FORMAT' | 'CONTRACT_ERROR' | 'OTHER_ERROR'
+export type ResolveAddressErrorName =
+  | 'UNSUPPORTED_NETWORK'
+  | 'INVALID_ADDRESS_FORMAT'
+  | 'CONTRACT_ERROR'
+  | 'OTHER_ERROR'
 export class ResolveAddressError extends ErrorBase<ResolveAddressErrorName> {}
 
 /**
@@ -44,6 +48,20 @@ export const resolveAddressToDomain = async (
       options,
     )
     log.setLevel(_o.debug ? 'DEBUG' : 'WARN')
+
+    // Check if given chainId is supported
+    if (!allSupportedChainIds.includes(_o.chainId)) {
+      return {
+        primaryDomain: undefined,
+        allPrimaryDomains: undefined,
+        error: new ResolveAddressError({
+          name: 'UNSUPPORTED_NETWORK',
+          message: `Unsupported chainId '${
+            _o.chainId
+          }' (must be one of: ${allSupportedChainIds.join(', ')})`,
+        }),
+      }
+    }
 
     // Initialize API & contract
     const api = _o?.customApi || (await getApi(_o.chainId))

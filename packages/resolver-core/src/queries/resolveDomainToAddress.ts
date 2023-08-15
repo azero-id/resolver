@@ -1,5 +1,5 @@
 import log from 'loglevel'
-import { SupportedChainId, SupportedTLD } from '../constants'
+import { SupportedChainId, SupportedTLD, allSupportedChainIds } from '../constants'
 import { getSupportedTLDs } from '../deployments'
 import { ErrorBase } from '../helpers/ErrorBase'
 import { decodeOutput } from '../helpers/decodeOutput'
@@ -10,6 +10,7 @@ import { BaseResolveOptions } from '../types'
 import { sanitizeDomain } from '../utils/sanitizeDomain'
 
 export type ResolveDomainErrorName =
+  | 'UNSUPPORTED_NETWORK'
   | 'UNSUPPORTED_TLD'
   | 'INVALID_DOMAIN_FORMAT'
   | 'CONTRACT_ERROR'
@@ -44,6 +45,19 @@ export const resolveDomainToAddress = async (
       options,
     )
     log.setLevel(_o.debug ? 'DEBUG' : 'WARN')
+
+    // Check if given chainId is supported
+    if (!allSupportedChainIds.includes(_o.chainId)) {
+      return {
+        address: undefined,
+        error: new ResolveDomainError({
+          name: 'UNSUPPORTED_NETWORK',
+          message: `Unsupported chainId '${
+            _o.chainId
+          }' (must be one of: ${allSupportedChainIds.join(', ')})`,
+        }),
+      }
+    }
 
     // Sanitize domain & Check if format is valid
     const _domain = _o.skipSanitization ? domain : sanitizeDomain(domain)
