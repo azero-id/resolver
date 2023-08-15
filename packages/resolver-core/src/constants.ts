@@ -8,6 +8,7 @@ export enum SupportedChainId {
   AlephZeroTestnet = 'alephzero-testnet',
   Development = 'development',
 }
+export const allSupportedChainIds = Object.values(SupportedChainId)
 
 /**
  * Chains
