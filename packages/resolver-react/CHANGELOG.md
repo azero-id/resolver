@@ -1,5 +1,16 @@
 # @azns/resolver-react
 
+## 1.4.0
+
+### Minor Changes
+
+- [#43](https://github.com/azero-id/resolver/pull/43) [`710fb82`](https://github.com/azero-id/resolver/commit/710fb82c04a572c43a5fcacfc6de0f51c425696d) Thanks [@wottpal](https://github.com/wottpal)! - Added Aleph Zero mainnet deployment address for `azns_router` contract.
+
+### Patch Changes
+
+- Updated dependencies [[`710fb82`](https://github.com/azero-id/resolver/commit/710fb82c04a572c43a5fcacfc6de0f51c425696d)]:
+  - @azns/resolver-core@1.4.0
+
 ## 1.3.1
 
 ### Patch Changes
