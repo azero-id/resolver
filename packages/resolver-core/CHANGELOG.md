@@ -1,5 +1,11 @@
 # @azns/resolver-core
 
+## 1.3.1
+
+### Patch Changes
+
+- [#40](https://github.com/azero-id/resolver/pull/40) [`fbdc676`](https://github.com/azero-id/resolver/commit/fbdc67609cef2b49627ff8db58385d272b0e28c9) Thanks [@wottpal](https://github.com/wottpal)! - Added the new error `UNSUPPORTED_NETWORK` in the resolving functions, to indicate whenever an incorred `chainId` parameter was passed.
+
 ## 1.3.0
 
 ### Minor Changes
