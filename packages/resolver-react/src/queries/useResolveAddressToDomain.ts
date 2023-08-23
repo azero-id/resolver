@@ -15,7 +15,7 @@ export const useResolveAddressToDomain = (
 ) => {
   const [primaryDomain, setPrimaryDomain] = useState<string | null | undefined>()
   const [allPrimaryDomains, setAllPrimaryDomains] = useState<string[] | undefined>()
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(!!address)
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<ResolveAddressError>()
 
