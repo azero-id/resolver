@@ -14,7 +14,7 @@ export const useResolveDomainToAddress = (
   options?: Partial<ResolveDomainOptions>,
 ) => {
   const [address, setAddress] = useState<string | null | undefined>()
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(!!domain)
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<ResolveDomainError>()
 
