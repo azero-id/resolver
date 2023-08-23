@@ -1,5 +1,11 @@
 # @azns/resolver-react
 
+## 1.5.0
+
+### Minor Changes
+
+- [#46](https://github.com/azero-id/resolver/pull/46) [`2c76bca`](https://github.com/azero-id/resolver/commit/2c76bcae642948bca86e85dc663f0440c31e2040) Thanks [@wottpal](https://github.com/wottpal)! - Better loading state defaults for hooks.
+
 ## 1.4.0
 
 ### Minor Changes
