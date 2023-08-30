@@ -25,7 +25,7 @@ export type ResolveAddressOptions = BaseResolveOptions & {
 
 /**
  * Resolves a given address to the assigned primary domain(s).
- * NOTE: When an address holds primary domains within multiple TLDs,
+ * NOTE: When an address holds primary domains within multiple registries (TLDs),
  *       all primary domains will be returned. This case is currently not possible,
  *       so `allPrimaryDomains` will always return an array with 0 or 1 primary domain.
  * @param address Address to resolve (e.g. `5EFJEY4DG2FnzcuCZpnRjjzT4x7heeEXuoYy1yAoUmshEhAP`)
