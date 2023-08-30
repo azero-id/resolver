@@ -1,5 +1,11 @@
 # @azns/resolver-core
 
+## 1.6.0
+
+### Minor Changes
+
+- [#49](https://github.com/azero-id/resolver/pull/49) [`059e321`](https://github.com/azero-id/resolver/commit/059e3215ebb54a830b088f80a0796a4c8d0ccda6) Thanks [@wottpal](https://github.com/wottpal)! - Dependency improvements
+
 ## 1.4.0
 
 ### Minor Changes
