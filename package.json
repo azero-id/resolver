@@ -49,11 +49,11 @@
     "eslint-plugin-react": "^7.33.1",
     "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8",
+    "prettier-plugin-tailwindcss": "~0.4.1",
     "simple-git-hooks": "^2.9.0",
-    "tsup": "^6.7.0",
-    "typedoc": "^0.24.8",
-    "typescript": "^5.1.6"
+    "tsup": "^7.2.0",
+    "typedoc": "^0.25.0",
+    "typescript": "~5.1.6"
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
