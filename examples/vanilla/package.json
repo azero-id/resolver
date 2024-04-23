@@ -9,7 +9,7 @@
     "start": "vite preview"
   },
   "engines": {
-    "node": ">=16 <=18",
+    "node": ">=16 <=20",
     "pnpm": "8"
   },
   "dependencies": {

@@ -9,7 +9,7 @@
     "url": "https://github.com/azero-id/resolver/issues"
   },
   "engines": {
-    "node": ">=16 <=18",
+    "node": ">=16 <=20",
     "pnpm": "8"
   },
   "workspaces": [
