@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center gap-14 bg-[#191817] p-10 text-white">
-      <h1 className="text-center text-2xl font-semibold">
+      <h1 className="text-center font-semibold text-2xl">
         React & Next.js Example with `@azns/resolver-react`
       </h1>
 

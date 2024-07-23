@@ -1,6 +1,6 @@
 import {
-  ResolveDomainError,
-  ResolveDomainOptions,
+  type ResolveDomainError,
+  type ResolveDomainOptions,
   resolveDomainToAddress,
 } from '@azns/resolver-core'
 import { useEffect, useState } from 'react'

@@ -1,4 +1,4 @@
-import { ContractPromise } from '@polkadot/api-contract'
+import type { ContractPromise } from '@polkadot/api-contract'
 import { stringCamelCase } from '@polkadot/util'
 
 /**

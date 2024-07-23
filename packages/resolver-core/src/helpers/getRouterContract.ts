@@ -1,6 +1,6 @@
-import { ApiPromise } from '@polkadot/api'
-import { ContractPromise } from '@polkadot/api-contract'
-import { ContractAddresses, ContractId, SupportedChainId } from '../constants'
+import type { ApiPromise } from '@polkadot/api'
+import type { ContractPromise } from '@polkadot/api-contract'
+import { type ContractAddresses, ContractId, type SupportedChainId } from '../constants'
 import { getContract, getContractAddress } from '../deployments'
 
 let _routerContract: ContractPromise | undefined = undefined

@@ -7,7 +7,7 @@ import { decodeOutput } from '../helpers/decodeOutput'
 import { getApi } from '../helpers/getApi'
 import { getMaxGasLimit } from '../helpers/getGasLimit'
 import { getRouterContract } from '../helpers/getRouterContract'
-import { BaseResolveOptions } from '../types'
+import type { BaseResolveOptions } from '../types'
 
 export type ResolveAddressErrorName =
   | 'UNSUPPORTED_NETWORK'
@@ -121,10 +121,9 @@ export const resolveAddressToDomain = async (
           cause: decodedOutput,
         }),
       }
-    } else if (!isError) {
-      allPrimaryDomains = (output || []).map(([, domain]: string[]) => domain)
     }
 
+    allPrimaryDomains = (output || []).map(([, domain]: string[]) => domain)
     const primaryDomain = allPrimaryDomains?.length ? allPrimaryDomains[0] : null
 
     log.debug(
