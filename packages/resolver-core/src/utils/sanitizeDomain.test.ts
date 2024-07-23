@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { sanitizeDomain, type SanitizeDomainOptions } from './sanitizeDomain'
+import { type SanitizeDomainOptions, sanitizeDomain } from './sanitizeDomain'
 
 describe('sanitizeDomain', () => {
   it('should trim and lowercase by default', () => {
