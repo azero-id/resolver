@@ -1,3 +1,8 @@
 {
-  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "jayfong.generate-index"]
+  "recommendations": [
+    "biomejs.biome",
+    "esbenp.prettier-vscode",
+    "dotenv.dotenv-vscode",
+    "jayfong.generate-index"
+  ]
 }

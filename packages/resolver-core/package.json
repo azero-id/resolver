@@ -30,11 +30,7 @@
   "packageManager": "pnpm@9.6.0",
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup",
-    "lint": "prettier . --check && eslint",
-    "lint:fix": "prettier . --write && eslint --fix",
-    "lint:format": "prettier . --write",
-    "typecheck": "tsc --noEmit"
+    "build": "tsup"
   },
   "peerDependencies": {
     "@polkadot/api": ">=10",
