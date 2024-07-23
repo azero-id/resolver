@@ -25,7 +25,6 @@
     "lint": "pnpm -F \"{packages/resolver-core}\" lint",
     "lint:fix": "pnpm -F \"{packages/resolver-core}\" lint:fix",
     "lint:format": "pnpm -F \"{packages/resolver-core}\" lint:format",
-    "update": "npm-check-updates --interactive --deep --format group --install always",
     "typecheck": "tsc --pretty --noEmit",
     "typesync": "typesync && bun install",
     "typedoc": "typedoc --options typedoc.json"
@@ -43,6 +42,9 @@
     ]
   },
   "devDependencies": {
+    "@types/eslint": "~9.6.0",
+    "@types/eslint-config-prettier": "~6.11.3",
+    "@types/lint-staged": "~13.2.2",
     "@types/node": "^18.17.4",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",

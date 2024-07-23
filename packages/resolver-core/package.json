@@ -59,5 +59,8 @@
     "dapps",
     "wallet",
     "web3"
-  ]
+  ],
+  "devDependencies": {
+    "@types/utf-8-validate": "~5.0.2"
+  }
 }
