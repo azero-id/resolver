@@ -25,7 +25,8 @@
   "packageManager": "pnpm@9.6.0",
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup"
+    "build": "tsup",
+    "test": "vitest --run"
   },
   "peerDependencies": {
     "@polkadot/api": ">=10",
@@ -52,6 +53,7 @@
     "web3"
   ],
   "devDependencies": {
-    "@types/utf-8-validate": "~5.0.2"
+    "@types/utf-8-validate": "~5.0.2",
+    "vitest": "^2.0.4"
   }
 }
