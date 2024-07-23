@@ -1,6 +1,6 @@
-import { ContractPromise } from '@polkadot/api-contract'
-import { ContractExecResult } from '@polkadot/types/interfaces'
-import { AnyJson, TypeDef } from '@polkadot/types/types'
+import type { ContractPromise } from '@polkadot/api-contract'
+import type { ContractExecResult } from '@polkadot/types/interfaces'
+import type { AnyJson, TypeDef } from '@polkadot/types/types'
 import { getAbiMessage } from './getAbiMessage'
 
 /**
@@ -41,7 +41,7 @@ export function decodeOutput(
   decodedOutput: string
   isError: boolean
 } {
-  let output
+  let output: any
   let decodedOutput = ''
   let isError = true
 
@@ -62,8 +62,8 @@ export function decodeOutput(
         ? JSON.stringify(output.Err, null, 2)
         : output.Err?.toString() ?? 'Error'
       : output !== 'Ok'
-      ? output?.toString() || 'Error'
-      : 'Error'
+        ? output?.toString() || 'Error'
+        : 'Error'
 
     const okText = isOk(r)
       ? typeof output === 'object'

@@ -1,4 +1,4 @@
-import { Chain } from './types'
+import type { Chain } from './types'
 
 /**
  * Supported Chains

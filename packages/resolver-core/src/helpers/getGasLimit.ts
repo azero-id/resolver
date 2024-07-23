@@ -1,4 +1,4 @@
-import { ApiPromise } from '@polkadot/api'
+import type { ApiPromise } from '@polkadot/api'
 import type { WeightV2 } from '@polkadot/types/interfaces'
 import { BN, bnToBn } from '@polkadot/util'
 

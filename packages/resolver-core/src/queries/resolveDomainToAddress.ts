@@ -1,12 +1,12 @@
 import log from 'loglevel'
-import { SupportedChainId, SupportedTLD, allSupportedChainIds } from '../constants'
+import { SupportedChainId, type SupportedTLD, allSupportedChainIds } from '../constants'
 import { getSupportedTLDs } from '../deployments'
 import { ErrorBase } from '../helpers/ErrorBase'
 import { decodeOutput } from '../helpers/decodeOutput'
 import { getApi } from '../helpers/getApi'
 import { getMaxGasLimit } from '../helpers/getGasLimit'
 import { getRouterContract } from '../helpers/getRouterContract'
-import { BaseResolveOptions } from '../types'
+import type { BaseResolveOptions } from '../types'
 import { sanitizeDomain } from '../utils/sanitizeDomain'
 
 export type ResolveDomainErrorName =
@@ -61,7 +61,7 @@ export const resolveDomainToAddress = async (
 
     // Sanitize domain & Check if format is valid
     const _domain = _o.skipSanitization ? domain : sanitizeDomain(domain)
-    const regex = new RegExp(`^(?:([^.]+)\\.)([^.]+)$`)
+    const regex = /^(?:([^.]+)\.)([^.]+)$/
     const regexResult = regex.exec(_domain)
     if (!regexResult || regexResult.length !== 3) {
       return {
@@ -110,9 +110,9 @@ export const resolveDomainToAddress = async (
           cause: decodedOutput,
         }),
       }
-    } else if (!isError) {
-      address = output.Ok
     }
+
+    address = output.Ok
 
     log.debug(
       address

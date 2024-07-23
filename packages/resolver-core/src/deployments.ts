@@ -1,9 +1,9 @@
-import { ApiPromise } from '@polkadot/api'
+import type { ApiPromise } from '@polkadot/api'
 import { ContractPromise } from '@polkadot/api-contract'
 import log from 'loglevel'
 import {
   CONTRACT_ADDRESSES,
-  ContractAddresses,
+  type ContractAddresses,
   ContractId,
   SupportedChainId,
   SupportedTLD,

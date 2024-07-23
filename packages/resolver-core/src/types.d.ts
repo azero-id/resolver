@@ -1,5 +1,5 @@
-import { ApiPromise } from '@polkadot/api'
-import { ContractAddresses } from './constants'
+import type { ApiPromise } from '@polkadot/api'
+import type { ContractAddresses } from './constants'
 
 export type Chain = {
   network: string

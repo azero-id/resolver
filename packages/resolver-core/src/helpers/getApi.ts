@@ -1,8 +1,8 @@
 import { ApiPromise, HttpProvider, WsProvider } from '@polkadot/api'
-import { ApiOptions } from '@polkadot/api/types'
+import type { ApiOptions } from '@polkadot/api/types'
 import log from 'loglevel'
-import { SupportedChainId, allChains } from '../constants'
-import { Chain } from '../types'
+import { type SupportedChainId, allChains } from '../constants'
+import type { Chain } from '../types'
 
 let _api: ApiPromise | undefined = undefined
 let _chain: Chain | undefined = undefined

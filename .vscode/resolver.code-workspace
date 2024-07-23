@@ -23,6 +23,7 @@
   ],
   "settings": {
     "search.exclude": {
+      "**/*.{jpg,png,svg,webm,mp4,woff,woff2}": true,
       "docs": true
     },
     "search.useIgnoreFiles": true,
@@ -31,11 +32,30 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true,
-      "source.fixAll.eslint": true
+      "source.organizeImports": "always",
+      "source.fixAll.eslint": "never",
+      "quickfix.biome": "always",
+      "source.organizeImports.biome": "never"
     },
+    "biome.enabled": true,
+    "eslint.enable": false,
+    "[javascriptreact][typescriptreact][javascript][typescript][json][jsonc]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[markdown][mdx][html][css][scss][sass][yml][yaml]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
     "files.associations": {
-      ".env.*": "dotenv"
-    }
+      "*.css": "tailwindcss"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+      ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ],
+    "github-actions.use-enterprise": true
   }
 }
