@@ -17,6 +17,7 @@
     "dev": "pnpm -r -F \"{packages/**}\" dev",
     "dev:examples": "pnpm run build && pnpm -r -F \"{examples/**}\" dev",
     "build": "pnpm -F \"{packages/resolver-core}\" build && pnpm -F \"{packages/resolver-react}\" build",
+    "test": "pnpm -F \"{packages/resolver-core}\" test",
     "changeset:version": "changeset version && pnpm install --lockfile-only",
     "changeset:publish": "pnpm build && changeset publish",
     "lint": "biome check . --files-ignore-unknown=true && prettier . --check",
