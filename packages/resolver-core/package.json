@@ -25,8 +25,7 @@
     "dist"
   ],
   "engines": {
-    "node": ">=16 <=18",
-    "pnpm": "8"
+    "node": ">=18"
   },
   "scripts": {
     "dev": "tsup --watch",

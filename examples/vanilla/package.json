@@ -9,8 +9,7 @@
     "start": "vite preview"
   },
   "engines": {
-    "node": ">=16 <=18",
-    "pnpm": "8"
+    "node": ">=18"
   },
   "dependencies": {
     "@azns/resolver-core": "workspace:*"
