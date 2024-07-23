@@ -1,5 +1,16 @@
 # @azns/resolver-core
 
+## 1.7.0
+
+### Minor Changes
+
+- [#60](https://github.com/azero-id/resolver/pull/60) [`b8c03a4`](https://github.com/azero-id/resolver/commit/b8c03a403a88d8133fba55d168a154baf2250ae9) Thanks [@wottpal](https://github.com/wottpal)! - Add basic unit tests for @azns/resolver-core
+
+- [#59](https://github.com/azero-id/resolver/pull/59) [`cd5e568`](https://github.com/azero-id/resolver/commit/cd5e568b84d00b04d0fc718cab4a86c6513e0c63) Thanks [@wottpal](https://github.com/wottpal)! - - Update engine & package manager specifications
+  - Switch partially to Biome for linting & formatting
+  - Add new linting & typechecking workflows
+  - Update dependencies
+
 ## 1.6.0
 
 ### Minor Changes
