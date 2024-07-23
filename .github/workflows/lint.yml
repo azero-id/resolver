@@ -2,6 +2,9 @@ name: Lint, Checks, and Tests
 
 on:
   push:
+    branches:
+      - main
+      - develop
   pull_request:
 
 jobs:
