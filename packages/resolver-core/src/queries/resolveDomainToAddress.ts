@@ -112,7 +112,7 @@ export const resolveDomainToAddress = async (
       }
     }
 
-    address = output.Ok
+    address = output.Ok ? output.Ok : null
 
     log.debug(
       address
