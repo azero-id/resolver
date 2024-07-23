@@ -27,7 +27,7 @@
     "typedoc": "typedoc --options typedoc.json"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm run nano-staged"
+    "pre-commit": "pnpm nano-staged"
   },
   "nano-staged": {
     "*.{js,ts,cjs,mjs,jsx,tsx,json,jsonc}": "biome check --write --no-errors-on-unmatched",
