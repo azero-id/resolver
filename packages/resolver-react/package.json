@@ -18,12 +18,7 @@
       "default": "./dist/index.js"
     }
   },
-  "files": [
-    "package.json",
-    "LICENSE",
-    "README.md",
-    "dist"
-  ],
+  "files": ["package.json", "LICENSE", "README.md", "dist"],
   "engines": {
     "node": ">=18"
   },

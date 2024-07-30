@@ -30,7 +30,7 @@
     "pre-commit": "pnpm nano-staged"
   },
   "nano-staged": {
-    "*.{js,ts,cjs,mjs,jsx,tsx,json,jsonc}": "biome check --write --no-errors-on-unmatched",
+    "*.{js,ts,cjs,mjs,jsx,tsx,json,jsonc}": "biome check --write",
     "*.{md,mdx,html,css,sass,scss,yml,yaml}": "prettier . --write"
   },
   "devDependencies": {
