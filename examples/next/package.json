@@ -10,7 +10,7 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.15.6",
   "dependencies": {
     "@azns/resolver-core": "workspace:*",
     "@azns/resolver-react": "workspace:*",
