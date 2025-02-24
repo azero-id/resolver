@@ -1,5 +1,18 @@
 # @azns/resolver-react
 
+## 2.1.0
+
+### Minor Changes
+
+- [`0dceb28`](https://github.com/azero-id/resolver/commit/0dceb28ca1cd666eb6986f12d6287a3f3b789d9b) Thanks [@wottpal](https://github.com/wottpal)! - Update dependencies
+
+### Patch Changes
+
+- [#66](https://github.com/azero-id/resolver/pull/66) [`3db080f`](https://github.com/azero-id/resolver/commit/3db080f83c25655462be2b4099b74c43ed8393c7) Thanks [@azero-id-bot](https://github.com/azero-id-bot)! - Re-release
+
+- Updated dependencies [[`0dceb28`](https://github.com/azero-id/resolver/commit/0dceb28ca1cd666eb6986f12d6287a3f3b789d9b), [`3db080f`](https://github.com/azero-id/resolver/commit/3db080f83c25655462be2b4099b74c43ed8393c7)]:
+  - @azns/resolver-core@2.1.0
+
 ## 2.0.1
 
 ### Patch Changes
