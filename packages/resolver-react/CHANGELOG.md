@@ -1,5 +1,14 @@
 # @azns/resolver-react
 
+## 2.0.1
+
+### Patch Changes
+
+- [`975bbb7`](https://github.com/azero-id/resolver/commit/975bbb72644952f3b7e1d69d7ab6e01efd7a4384) Thanks [@wottpal](https://github.com/wottpal)! - Re-release of 2.0.0
+
+- Updated dependencies [[`975bbb7`](https://github.com/azero-id/resolver/commit/975bbb72644952f3b7e1d69d7ab6e01efd7a4384)]:
+  - @azns/resolver-core@2.0.1
+
 ## 2.0.0
 
 ### Major Changes
