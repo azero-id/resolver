@@ -26,7 +26,8 @@
         "useAriaPropsForRole": "off"
       },
       "complexity": {
-        "noForEach": "off"
+        "noForEach": "off",
+        "noBannedTypes": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "off"

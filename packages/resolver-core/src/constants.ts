@@ -56,15 +56,29 @@ export enum ContractId {
   NameChecker = 'azns_name_checker',
 }
 
-export type ContractAddresses = { [_ in ContractId]?: string }
+export type ContractAddresses = { [_ in ContractId | `azns_registry_${SupportedTLD}`]?: string }
 
 export const CONTRACT_ADDRESSES: {
   [_ in SupportedChainId]?: ContractAddresses
 } = {
   [SupportedChainId.AlephZero]: {
     [ContractId.Router]: '5FfRtDtpS3Vcr7BTChjPiQNrcAKu3VLv4E1NGF6ng6j3ZopJ',
+    [`${ContractId.Registry}_${SupportedTLD.AZERO}`]:
+      '5CTQBfBC9SfdrCDBJdfLiyW2pg9z5W6C6Es8sK313BLnFgDf',
   },
   [SupportedChainId.AlephZeroTestnet]: {
     [ContractId.Router]: '5HXjj3xhtRMqRYCRaXTDcVPz3Mez2XBruyujw6UEkvn8PCiA',
+    [`${ContractId.Registry}_${SupportedTLD.TZERO}`]:
+      '5FsB91tXSEuMj6akzdPczAtmBaVKToqHmtAwSUzXh49AYzaD',
   },
+}
+
+/**
+ * Multinetwork Coin Types based on ENSIP-9 & 11
+ * @see https://docs.ens.domains/ensip/11
+ * @see https://github.com/satoshilabs/slips/blob/master/slip-0044.md
+ */
+export enum AlephZeroCoinTypes {
+  L1 = 643, // Azero Substrate L1 from SLIP-0044
+  L2 = 2147525103, // Azero EVM L2 from (0x80000000 | 41455) >>> 0
 }

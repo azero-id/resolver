@@ -30,8 +30,8 @@ export const getContractAbi = async (contractId: ContractId) => {
     [_ in ContractId]?: any
   } = {
     [ContractId.Router]: import(`./deployments/azns_router/metadata.json`),
+    [ContractId.Registry]: import(`./deployments/azns_registry/metadata.json`),
     // NOTE: Redundant contracts are not included for now to reduce bundle size
-    // [ContractId.Registry]: import(`./deployments/azns_registry/metadata.json`),
     // [ContractId.FeeCalculator]: import(`./deployments/azns_fee_calculator/metadata.json`),
     // [ContractId.MerkleVerifier]: import(`./deployments/azns_merkle_verifier/metadata.json`),
     // [ContractId.NameChecker]: import(`./deployments/azns_name_checker/metadata.json`),
@@ -46,7 +46,7 @@ export const getContractAbi = async (contractId: ContractId) => {
  */
 export const getContractAddress = (
   chainId: SupportedChainId,
-  contractId: ContractId,
+  contractId: ContractId | `azns_registry_${SupportedTLD}`,
   customContractAddresses?: ContractAddresses,
 ) => {
   return customContractAddresses?.[contractId] ?? CONTRACT_ADDRESSES[chainId]?.[contractId]
@@ -58,10 +58,13 @@ export const getContractAddress = (
 export const getContract = async (
   api: ApiPromise,
   chainId: SupportedChainId,
-  contractId: ContractId,
+  contractId: ContractId | `${ContractId.Registry}_${SupportedTLD}`,
   customContractAddresses?: ContractAddresses,
 ) => {
-  const abi = await getContractAbi(contractId)
+  const baseContractId = contractId.startsWith(ContractId.Registry)
+    ? ContractId.Registry
+    : (contractId as ContractId)
+  const abi = await getContractAbi(baseContractId)
   if (!abi) throw new Error(`No metadata found for contract '${contractId}'.`)
 
   const address = getContractAddress(chainId, contractId, customContractAddresses)
