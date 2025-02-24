@@ -1,5 +1,16 @@
 # @azns/resolver-react
 
+## 2.0.0
+
+### Major Changes
+
+- [#63](https://github.com/azero-id/resolver/pull/63) [`aec77fc`](https://github.com/azero-id/resolver/commit/aec77fce4d1637484e11d7f9d3067a6410e2b1dd) Thanks [@wottpal](https://github.com/wottpal)! - Implement Multinetwork Address Resolution 🚀
+
+### Patch Changes
+
+- Updated dependencies [[`aec77fc`](https://github.com/azero-id/resolver/commit/aec77fce4d1637484e11d7f9d3067a6410e2b1dd)]:
+  - @azns/resolver-core@2.0.0
+
 ## 1.7.0
 
 ### Minor Changes
