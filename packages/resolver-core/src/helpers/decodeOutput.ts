@@ -47,7 +47,7 @@ export function decodeOutput(
 
   if (result.isOk) {
     const flags = result.asOk.flags.toHuman()
-    isError = flags.includes('Revert')
+    isError = !Object.values(flags).includes('0')
     const abiMessage = getAbiMessage(contract, method)
     const returnType = abiMessage.returnType
     const returnTypeName = getReturnTypeName(returnType)
